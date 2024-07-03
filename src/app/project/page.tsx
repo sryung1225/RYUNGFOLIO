@@ -1,9 +1,9 @@
 import Button from "@/components/Button";
 
-export default function Home() {
+export default function Project() {
   return (
     <main>
-      <h1>홈</h1>
+      <h1>project</h1>
       <Button />
     </main>
   );
