@@ -1,4 +1,4 @@
-import { getProjects } from "@/api/projects-axios";
+import { getProjects } from "@/api/projects";
 import Button from "@/components/Button";
 import type { Project } from "@/types/project";
 import Image from "next/image";
