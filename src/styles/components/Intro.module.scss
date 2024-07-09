@@ -1,0 +1,26 @@
+.wrapper {
+  max-width: none;
+  background-color: $color-black;
+}
+
+.title {
+  color: $color-white;
+  font-size: 4.5rem;
+  line-height: 5rem;
+  font-weight: 700;
+  text-align: center;
+
+  @media (max-width: $size-default) {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}
+
+.point {
+  &_red {
+    color: $color-red;
+  }
+  &_green {
+    color: $color-green;
+  }
+}

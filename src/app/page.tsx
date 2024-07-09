@@ -1,10 +1,11 @@
-import Button from "@/components/Button";
+import About from "@/components/About/About";
+import Intro from "@/components/Intro";
 
 export default function Home() {
   return (
     <main>
-      <h1>홈</h1>
-      <Button />
+      <Intro />
+      <About />
     </main>
   );
 }
