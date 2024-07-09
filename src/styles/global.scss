@@ -23,8 +23,13 @@
 }
 
 * {
+  color: $color-black;
   font-family: "SBAggro", sans-serif;
   font-weight: 300;
+}
+
+body {
+  background-color: $color-white;
 }
 
 .a11yHidden {
