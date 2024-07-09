@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* font */
+@font-face {
+  font-family: "SBAggro";
+  src: url("/fonts/SB-Aggro-M.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SBAggro";
+  src: url("/fonts/SB-Aggro-L.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SBAggro";
+  src: url("/fonts/SB-Aggro-B.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: "SBAggro", sans-serif;
+  font-weight: 300;
+}
+
 .a11yHidden {
   display: inline-block;
   overflow: hidden;
