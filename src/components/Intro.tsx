@@ -1,17 +1,74 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "@/styles/components/Intro.module.scss";
 
+const textData = [
+  "안녕하세요",
+  "항상 더 나은 길을 고민하는",
+  `웹 <span class="${styles.point_red}">프론트엔드</span> 개발자`,
+  `<span class="${styles.point_green}">이성령</span> 입니다`,
+];
+
 export default function Intro() {
+  const [displayedText, setDisplayedText] = useState<string[]>([]); // 타이핑 완료된 텍스트
+  const [paragraphIndex, setParagraphIndex] = useState(0); // 문장 index
+  const [charIndex, setCharIndex] = useState(0); // 글자 index
+
+  useEffect(() => {
+    // 종료 조건: 모든 문장 탐색 완료
+    if (paragraphIndex >= textData.length) return;
+
+    const currentString = textData[paragraphIndex]; // 현재 표시할 텍스트
+    const openTagIndex = currentString.indexOf("<span"); // 열림태그 시작 index
+    const closeTagIndex = currentString.indexOf("</span>") + 7; // 닫힘태그 끝 index
+
+    // 화면에 표시할 텍스트 지정
+    const updateDisplayedText = (endIndex: number) => {
+      setDisplayedText((prev) => [
+        ...prev.slice(0, paragraphIndex),
+        currentString.slice(0, endIndex),
+      ]);
+      setCharIndex(endIndex);
+    };
+
+    // 다음 글자 타이핑
+    const typeNextChar = () => {
+      updateDisplayedText(charIndex + 1);
+      // 문장의 마지막 글자까지 타이핑 완료되면 다음 문장으로 이동
+      if (charIndex + 1 === currentString.length) {
+        setParagraphIndex((prev) => prev + 1);
+        setCharIndex(0);
+        clearInterval(interval);
+      }
+    };
+
+    let interval: NodeJS.Timeout;
+
+    if (charIndex === openTagIndex) {
+      // span 태그 열림 : 텍스트 업데이트
+      updateDisplayedText(
+        openTagIndex + currentString.substring(openTagIndex).indexOf(">") + 1
+      );
+    } else if (charIndex > openTagIndex && charIndex < closeTagIndex - 7) {
+      // span 태그 내부 텍스트 타이핑
+      interval = setInterval(typeNextChar, 100);
+    } else if (charIndex === closeTagIndex - 7) {
+      // span 태그 닫힘 : 텍스트 업데이트
+      updateDisplayedText(closeTagIndex);
+    } else {
+      // 텍스트 타이핑
+      interval = setInterval(typeNextChar, 100);
+    }
+    return () => clearInterval(interval); // 클린업 : interval 정리
+  }, [charIndex, paragraphIndex]);
+
   return (
     <section className={styles.wrapper}>
       <h2 className={styles.title}>
-        <p>안녕하세요</p>
-        <p>항상 더 나은 길을 고민하는</p>
-        <p>
-          웹 <span className={styles.point_red}>프론트엔드</span> 개발자
-        </p>
-        <p>
-          <span className={styles.point_green}>이성령</span> 입니다
-        </p>
+        {displayedText.map((text, index) => (
+          <p key={index} dangerouslySetInnerHTML={{ __html: text }} />
+        ))}
       </h2>
     </section>
   );
