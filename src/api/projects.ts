@@ -8,7 +8,6 @@ export async function getProjects() {
     const response = await axios.get(`${supabaseUrl}/projects`, {
       headers: {
         apikey: supabaseKey,
-        Authorization: `Bearer ${supabaseKey}`,
       },
     });
     console.log("데이터 패칭 성공", response.data);
