@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import styles from "@/styles/components/intro/Intro.module.scss";
-import Title from "./Title";
+import styles from '@/styles/components/intro/Intro.module.scss';
+import Title from './Title';
 
 export default function Intro() {
   return (
