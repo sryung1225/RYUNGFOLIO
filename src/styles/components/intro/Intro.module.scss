@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: none;
+  height: calc(100dvh - 72px * 2);
+  background-color: $color-black;
+}

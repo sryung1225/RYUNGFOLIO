@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "@/styles/components/Intro.module.scss";
+import styles from "@/styles/components/intro/Title.module.scss";
 
 const textData = [
   "안녕하세요",
@@ -10,7 +10,7 @@ const textData = [
   `<span class="${styles.point_green}">이성령</span> 입니다`,
 ];
 
-export default function Intro() {
+export default function Title() {
   const [displayedText, setDisplayedText] = useState<string[]>([]); // 타이핑 완료된 텍스트
   const [paragraphIndex, setParagraphIndex] = useState(0); // 문장 index
   const [charIndex, setCharIndex] = useState(0); // 글자 index
@@ -64,12 +64,14 @@ export default function Intro() {
   }, [charIndex, paragraphIndex]);
 
   return (
-    <section className={styles.wrapper}>
-      <h2 className={styles.title}>
-        {displayedText.map((text, index) => (
-          <p key={index} dangerouslySetInnerHTML={{ __html: text }} />
-        ))}
-      </h2>
-    </section>
+    <h2>
+      {displayedText.map((text, index) => (
+        <p
+          className={styles.title}
+          key={index}
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      ))}
+    </h2>
   );
 }
