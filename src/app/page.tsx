@@ -1,10 +1,13 @@
-import Button from "@/components/Button";
+import Header from '@/components/common/Header';
+import Intro from '@/components/intro/Intro';
+import About from '@/components/About/About';
 
 export default function Home() {
   return (
     <main>
-      <h1>홈</h1>
-      <Button />
+      <Header />
+      <Intro />
+      <About />
     </main>
   );
 }

@@ -1,14 +1,14 @@
-import { getProjects } from "@/api/projects";
-import Button from "@/components/Button";
-import type { Project } from "@/types/project";
-import Image from "next/image";
+import Image from 'next/image';
+import getProjects from '@/api/projects';
+import type { Project } from '@/types/project';
+import Button from '@/components/common/Button';
 
-export default async function Project() {
+export default async function Projects() {
   const projects: Project[] = await getProjects();
-  console.log("프로젝트: ", projects);
+  console.log('프로젝트: ', projects);
   return (
     <main>
-      <h1>project</h1>
+      <h1>project</h1>s
       <Button />
       <ul>
         {projects.map((project) => (
