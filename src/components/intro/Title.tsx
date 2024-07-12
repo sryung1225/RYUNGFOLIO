@@ -7,7 +7,7 @@ import styles from '@/styles/components/intro/Title.module.scss';
 
 const textData = [
   '안녕하세요',
-  '항상 더 나은 길을 고민하는',
+  `항상 <span class="${styles.point_yellow}">더 좋은 방향</span>을 고민하는`,
   `웹 <span class="${styles.point_red}">프론트엔드</span> 개발자`,
   `<span class="${styles.point_green}">이성령</span> 입니다`,
 ];
@@ -67,10 +67,10 @@ export default function Title() {
   }, [charIndex, paragraphIndex]);
 
   return (
-    <h2>
+    <h2 className={styles.title}>
       {displayedText.map((text) => (
         <p
-          className={styles.title}
+          className={styles.string}
           key={uuidv4()}
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}

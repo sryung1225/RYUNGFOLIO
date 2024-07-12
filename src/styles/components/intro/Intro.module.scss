@@ -1,9 +1,136 @@
+$common-padding: 72px;
+$wave-height: 173px;
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: none;
-  height: calc(100dvh - 72px * 2);
+  height: calc(100dvh - $common-padding * 2);
   background-color: $color-black;
+}
+
+@keyframes stretchFromCenter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70dvw;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.bar {
+  position: relative;
+  width: 0;
+  max-width: $size-default;
+  height: 8px;
+  background-color: $color-white;
+  animation: stretchFromCenter 2s 4s forwards;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    display: inline-block;
+    width: 70px;
+    height: 64px;
+    opacity: 0;
+    animation: fadeIn 0.5s 5s forwards;
+  }
+  &::before {
+    left: 4px;
+    background: url('/img/tree_left.svg') center bottom no-repeat;
+    background-size: contain;
+  }
+  &::after {
+    right: 4px;
+    background: url('/img/tree_right.svg') center bottom no-repeat;
+    background-size: contain;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.mouse {
+  position: relative;
+  margin-top: 100px;
+  width: 30px;
+  height: 50px;
+  border: 2px solid $color-white;
+  border-radius: 20px;
+  opacity: 0;
+  animation: fadeIn 1s 5.5s forwards;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    width: 4px;
+    height: 12px;
+    background-color: $color-white;
+    border-radius: 4px;
+    opacity: 0;
+    animation: scrollDown 1.5s 6s linear infinite;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wave_wrapper {
+  position: relative;
+  width: 100%;
+  height: $wave-height;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 6400px;
+  height: $wave-height;
+  background: url('/img/wave.svg') repeat-x;
+  animation: wave 20s linear infinite;
+  &:nth-of-type(1) {
+    top: -20px;
+    left: 0;
+  }
+  &:nth-of-type(2) {
+    top: -10px;
+    left: -100px;
+    opacity: 0.5;
+  }
+  &:nth-of-type(3) {
+    top: 0px;
+    left: -160px;
+    opacity: 0.2;
+  }
 }
