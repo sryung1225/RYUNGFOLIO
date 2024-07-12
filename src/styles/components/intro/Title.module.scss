@@ -1,0 +1,46 @@
+.title {
+  height: 3.5rem * 4;
+  margin-top: 134px;
+  margin-bottom: 28px;
+  padding: 0 20px;
+}
+
+.string {
+  color: $color-white;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.point {
+  &_red {
+    color: $color-red;
+  }
+  &_green {
+    color: $color-green;
+  }
+  &_yellow {
+    color: $color-yellow;
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    height: 2.5rem * 4;
+  }
+  .string {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    height: 2rem * 4;
+  }
+  .string {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
