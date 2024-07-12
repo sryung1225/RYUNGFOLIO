@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import DOMPurify from 'dompurify';
 import styles from '@/styles/components/intro/Title.module.scss';
 
 const textData = [
@@ -32,6 +34,8 @@ export default function Title() {
       setCharIndex(endIndex);
     };
 
+    let interval: NodeJS.Timeout;
+
     // 다음 글자 타이핑
     const typeNextChar = () => {
       updateDisplayedText(charIndex + 1);
@@ -42,8 +46,6 @@ export default function Title() {
         clearInterval(interval);
       }
     };
-
-    let interval: NodeJS.Timeout;
 
     if (charIndex === openTagIndex) {
       // span 태그 열림 : 텍스트 업데이트
@@ -60,16 +62,17 @@ export default function Title() {
       // 텍스트 타이핑
       interval = setInterval(typeNextChar, 100);
     }
+    // eslint-disable-next-line consistent-return
     return () => clearInterval(interval); // 클린업 : interval 정리
   }, [charIndex, paragraphIndex]);
 
   return (
     <h2>
-      {displayedText.map((text, index) => (
+      {displayedText.map((text) => (
         <p
           className={styles.title}
-          key={index}
-          dangerouslySetInnerHTML={{ __html: text }}
+          key={uuidv4()}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}
         />
       ))}
     </h2>
