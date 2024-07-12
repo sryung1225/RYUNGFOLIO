@@ -72,6 +72,7 @@ export default function Title() {
         <p
           className={styles.title}
           key={uuidv4()}
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }}
         />
       ))}

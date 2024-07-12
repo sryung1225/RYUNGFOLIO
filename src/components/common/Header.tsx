@@ -25,7 +25,7 @@ export default function Header() {
       <button type="button" className={styles.navButton} onClick={toggleNav}>
         <Image src="/img/nav.svg" alt="네비게이션" width="30" height="26" />
       </button>
-      {openNav && <nav className={styles.nav}></nav>}
+      {openNav && <nav className={styles.nav} />}
     </header>
   );
 }

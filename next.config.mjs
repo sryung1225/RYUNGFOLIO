@@ -3,19 +3,19 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: 'https',
         hostname: process.env.NEXT_PUBLIC_SUPABASE_HOSTNAME,
-        pathname: "/storage/v1/object/sign/images/**",
+        pathname: '/storage/v1/object/sign/images/**',
       },
       {
-        protocol: "https",
-        hostname: "placehold.co",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: 'placehold.co',
+        pathname: '/**',
       },
     ],
   },
   sassOptions: {
-    includePaths: ["styles"],
+    includePaths: ['styles'],
     prependData: `@import "@/styles/variables.scss"; @import "@/styles/mixins.scss";`,
   },
 };
