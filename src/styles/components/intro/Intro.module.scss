@@ -30,6 +30,7 @@ $wave-height: 173px;
 }
 
 .bar {
+  flex-shrink: 0;
   position: relative;
   width: 0;
   max-width: $size-default;
@@ -75,6 +76,7 @@ $wave-height: 173px;
 }
 
 .mouse {
+  flex-shrink: 0;
   position: relative;
   margin-top: 100px;
   width: 30px;
@@ -110,6 +112,7 @@ $wave-height: 173px;
   position: relative;
   width: 100%;
   height: $wave-height;
+  margin-bottom: 120px;
   overflow: hidden;
 }
 
