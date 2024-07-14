@@ -43,3 +43,15 @@ body {
   margin: -1px;
   position: absolute !important;
 }
+
+.point {
+  &_red {
+    color: $color-red;
+  }
+  &_green {
+    color: $color-green;
+  }
+  &_yellow {
+    color: $color-yellow;
+  }
+}

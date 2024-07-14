@@ -1,5 +1,4 @@
 import Section from '../common/Section';
-// import styles from '@/styles/components/about/About.module.scss';
 
 export default function About() {
   return (
@@ -7,7 +6,7 @@ export default function About() {
       id="about"
       headlineText={
         <>
-          저는 <span className="point-red">크리스마스</span>를 좋아하는
+          저는 <span className="point_red">크리스마스</span>를 좋아하는
           이성령이라고 합니다
         </>
       }
