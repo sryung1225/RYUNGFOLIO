@@ -1,0 +1,38 @@
+.section {
+  width: 100%;
+  max-width: $size-default;
+  height: auto;
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.hashtag {
+  display: inline-block;
+  padding: 0.6rem 0.6rem 0.4rem;
+  background-color: $color-red;
+  border-radius: 20px;
+  color: $color-white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.headline {
+  display: block;
+  margin-top: 1.75rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 4.25rem;
+  .point-green {
+    color: $color-green;
+  }
+  .point-red {
+    color: $color-red;
+  }
+}
+
+.subheadline {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 300;
+}

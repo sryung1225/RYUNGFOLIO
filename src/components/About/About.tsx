@@ -1,9 +1,19 @@
-import styles from '@/styles/components/About/About.module.scss';
+import Section from '../common/Section';
+// import styles from '@/styles/components/about/About.module.scss';
 
 export default function About() {
   return (
-    <section className="wrapper">
-      <p className={styles.pra}>어바웃</p>
-    </section>
+    <Section
+      id="about"
+      headlineText={
+        <>
+          저는 <span className="point-red">크리스마스</span>를 좋아하는
+          이성령이라고 합니다
+        </>
+      }
+      subheadlineText="매일 하루 하루가 크리스마스처럼 의미 있고 즐거웠으면 좋겠습니다"
+    >
+      <p>어바웃섹션</p>
+    </Section>
   );
 }

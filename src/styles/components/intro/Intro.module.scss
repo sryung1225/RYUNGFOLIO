@@ -6,8 +6,8 @@ $wave-height: 173px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: none;
   height: calc(100dvh - $common-padding * 2);
+  padding: 72px 0;
   background-color: $color-black;
 }
 
