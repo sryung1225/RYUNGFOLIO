@@ -1,9 +1,11 @@
+$padding-horiz: 40px;
+
 .section {
-  width: 100%;
-  max-width: $size-default;
+  width: calc(100% - $padding-horiz * 2);
+  max-width: calc($size-default - $padding-horiz * 2);
   height: auto;
   margin: 0 auto;
-  padding: 72px 0;
+  padding: 72px $padding-horiz;
 }
 
 .hashtag {
