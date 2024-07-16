@@ -6,8 +6,8 @@ $wave-height: 173px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: none;
   height: calc(100dvh - $common-padding * 2);
+  padding: 72px 0;
   background-color: $color-black;
 }
 
@@ -30,6 +30,7 @@ $wave-height: 173px;
 }
 
 .bar {
+  flex-shrink: 0;
   position: relative;
   width: 0;
   max-width: $size-default;
@@ -75,6 +76,7 @@ $wave-height: 173px;
 }
 
 .mouse {
+  flex-shrink: 0;
   position: relative;
   margin-top: 100px;
   width: 30px;
@@ -110,6 +112,7 @@ $wave-height: 173px;
   position: relative;
   width: 100%;
   height: $wave-height;
+  margin-bottom: 120px;
   overflow: hidden;
 }
 

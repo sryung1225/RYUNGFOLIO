@@ -1,0 +1,34 @@
+$padding-horiz: 40px;
+
+.section {
+  width: calc(100% - $padding-horiz * 2);
+  max-width: calc($size-default - $padding-horiz * 2);
+  height: auto;
+  margin: 0 auto;
+  padding: 72px $padding-horiz;
+}
+
+.hashtag {
+  display: inline-block;
+  padding: 0.6rem 0.6rem 0.4rem;
+  background-color: $color-red;
+  border-radius: 20px;
+  color: $color-white;
+  font-size: $font-xl;
+  font-weight: 700;
+  line-height: $font-xl;
+}
+
+.headline {
+  display: block;
+  margin-top: 1.75rem;
+  font-size: $font-xl;
+  font-weight: 500;
+  line-height: 4.25rem;
+}
+
+.subheadline {
+  display: block;
+  font-size: $font-m;
+  font-weight: 300;
+}
