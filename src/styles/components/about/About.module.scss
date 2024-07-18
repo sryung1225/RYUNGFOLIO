@@ -1,13 +1,46 @@
-.gallery {
-  position: relative;
+.wrapper {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: top;
+  gap: 60px;
   margin-top: 60px;
+}
+
+.gallery {
+  position: relative;
   img {
     display: inline-block;
     width: 260px;
     height: 260px;
     border-radius: 40px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 206px;
+    right: 0;
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    background: url('/img/tree_right.svg') no-repeat;
+    background-size: contain;
+  }
+}
+
+.name {
+  margin-top: 30px;
+  line-height: 2rem;
+  text-align: center;
+  .eng {
+    font-size: $font-s;
+    font-weight: 500;
+  }
+  .kor {
+    font-size: $font-l;
+    font-weight: 500;
+  }
+  .birth {
+    font-size: $font-s;
+    font-weight: 300;
   }
 }
