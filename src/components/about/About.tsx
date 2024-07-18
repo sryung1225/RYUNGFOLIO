@@ -19,7 +19,7 @@ export default function About() {
       <div className={styles.wrapper}>
         <div className={styles.gallery}>
           <Image
-            src="/img/profile_1.jpg"
+            src="/img/profile.jpg"
             alt="프로필 이미지"
             className={styles.gallery}
             width="260"
