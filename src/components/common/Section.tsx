@@ -3,14 +3,14 @@ import Link from 'next/link';
 import styles from '@/styles/components/common/Section.module.scss';
 import Headline from './Headline';
 
-interface SectionProps {
+interface SectionPropsType {
   id: string;
   headline: ReactNode;
   subheadline?: ReactNode;
   children: ReactNode;
 }
 
-function Section({ id, headline, subheadline, children }: SectionProps) {
+function Section({ id, headline, subheadline, children }: SectionPropsType) {
   return (
     <section id={id} className={styles.section}>
       <h2 className="a11yHidden">프로필</h2>
