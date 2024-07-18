@@ -6,7 +6,7 @@ import Headline from './Headline';
 interface SectionProps {
   id: string;
   headline: ReactNode;
-  subheadline: ReactNode | null;
+  subheadline?: ReactNode;
   children: ReactNode;
 }
 
@@ -22,5 +22,9 @@ function Section({ id, headline, subheadline, children }: SectionProps) {
     </section>
   );
 }
+
+Section.defaultProps = {
+  subheadline: null,
+};
 
 export default Section;

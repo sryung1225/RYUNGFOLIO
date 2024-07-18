@@ -10,11 +10,11 @@ export default function About() {
       id="about"
       headline={
         <>
-          저는 <span className="point_red">크리스마스</span>를 좋아하는
-          이성령이라고 합니다
+          매일 하루 하루를 크리스마스처럼, <br />
+          즐겁고 의미있게 경험치를 쌓는 개발자{' '}
+          <span className="point_green">이성령</span>입니다. <br />
         </>
       }
-      subheadline="매일 하루 하루가 크리스마스처럼 의미 있고 즐거웠으면 좋겠습니다"
     >
       <div className={styles.wrapper}>
         <div className={styles.gallery}>
