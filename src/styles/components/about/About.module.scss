@@ -1,88 +1,46 @@
-.gallery {
-  position: relative;
+.wrapper {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: top;
+  gap: 60px;
   margin-top: 60px;
+}
+
+.gallery {
+  position: relative;
   img {
     display: inline-block;
     width: 260px;
     height: 260px;
     border-radius: 40px;
   }
-}
-
-.info {
-  &_wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 20px auto 160px;
-  }
-  &_icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 30px;
-    background-color: $color-gray;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    i {
-      width: 26px;
-      height: 40px;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      $infos: ('birth', 'location', 'mbti', 'swim', 'volunteer');
-      @each $name in $infos {
-        &.#{$name} {
-          background-image: url('/img/info_#{$name}.svg');
-        }
-      }
-    }
-  }
-  &_description {
+  &::after {
+    content: '';
     position: absolute;
-    bottom: -60px;
-    padding: 0 1.25rem;
-    background-color: $color-light-gray;
-    border-radius: 4px;
-    font-size: $font-s;
-    line-height: 3.125rem;
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.5s ease-in-out;
-  }
-  &_icon:hover {
-    background-color: $color-red;
-  }
-  &_icon:hover + &_description {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.bubble {
-  @mixin bubbles {
-    position: absolute;
-    display: inline-block;
-    margin: 0.625rem;
-    padding: 10px;
-    background-color: $color-light-gray;
-  }
-  &_left {
-    @include bubbles;
-    top: 30px;
-    left: 0;
-  }
-  &_right {
-    @include bubbles;
-    top: 100px;
+    top: 206px;
     right: 0;
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    background: url('/img/tree_right.svg') no-repeat;
+    background-size: contain;
+  }
+}
+
+.name {
+  margin-top: 30px;
+  line-height: 2rem;
+  text-align: center;
+  .eng {
+    font-size: $font-s;
+    font-weight: 500;
+  }
+  .kor {
+    font-size: $font-l;
+    font-weight: 500;
+  }
+  .birth {
+    font-size: $font-s;
+    font-weight: 300;
   }
 }

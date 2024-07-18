@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import getProjects from '@/api/projects';
-import type { Project } from '@/types/project';
+import type { ProjectType } from '@/types/project';
 import Button from '@/components/common/Button';
 
 export default async function Projects() {
-  const projects: Project[] = await getProjects();
+  const projects: ProjectType[] = await getProjects();
   console.log('프로젝트: ', projects);
   return (
     <main>

@@ -21,6 +21,7 @@ export default function Header() {
         alt="로고"
         width="40"
         height="40"
+        priority
       />
       <button type="button" className={styles.navButton} onClick={toggleNav}>
         <Image src="/img/nav.svg" alt="네비게이션" width="30" height="26" />

@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 import styles from '@/styles/components/common/Section.module.scss';
 
-interface HeadlineProps {
+interface HeadlinePropsType {
   headline: ReactNode;
   subheadline?: ReactNode;
 }
 
-function Headline({ headline, subheadline }: HeadlineProps) {
+function Headline({ headline, subheadline }: HeadlinePropsType) {
   return (
     <>
       <h3 className={styles.headline}>{headline}</h3>
