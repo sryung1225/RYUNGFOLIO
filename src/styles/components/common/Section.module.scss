@@ -5,7 +5,7 @@ $padding-horiz: 40px;
   max-width: calc($size-default - $padding-horiz * 2);
   height: auto;
   margin: 0 auto;
-  padding: 72px $padding-horiz;
+  padding: 112px $padding-horiz 72px;
 }
 
 .hashtag {
