@@ -4,6 +4,7 @@ import infos from '@/constants/infos';
 import React from 'react';
 import Section from '../common/Section';
 import Headline from '../common/Headline';
+import Profile from './Profile';
 
 export default function About() {
   return (
@@ -31,6 +32,7 @@ export default function About() {
           height="260"
         />
       </div>
+      <Profile />
       <dl className={styles.info_wrapper}>
         {infos.map((info) => (
           <React.Fragment key={info.key}>
