@@ -7,6 +7,7 @@ export default function Work() {
   return (
     <Section
       id="work"
+      name="업무 경험"
       headline={
         <>
           실제 서비스의 화면을 그려보고 싶다는 갈망으로 <br />
