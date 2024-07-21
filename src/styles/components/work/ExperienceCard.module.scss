@@ -1,0 +1,53 @@
+.card {
+  width: 100%;
+  margin-top: 44px;
+}
+
+.info {
+  $image-size: 80px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: $image-size;
+  padding-left: $image-size + 30px;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: $image-size;
+    height: $image-size;
+  }
+  .title {
+    margin-bottom: 8px;
+    font-size: $font-m;
+    font-weight: 500;
+  }
+  p {
+    font-size: $font-s;
+    line-height: 1.3;
+  }
+}
+
+.do {
+  $common-margin: 16px;
+  &_list {
+    margin: $common-margin * 2 0;
+  }
+  &_item {
+    margin: $common-margin;
+    list-style: circle;
+  }
+  &_title {
+    font-size: $font-s;
+    font-weight: 300;
+  }
+  &_description {
+    margin: 4px $common-margin;
+    list-style: circle;
+    font-size: $font-s;
+    color: $color-gray;
+  }
+}

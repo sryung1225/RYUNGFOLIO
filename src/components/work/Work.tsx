@@ -1,7 +1,7 @@
-import React from 'react';
 import styles from '@/styles/components/work/Work.module.scss';
 import Section from '../common/Section';
 import Headline from '../common/Headline';
+import ExperienceCard from './ExperienceCard';
 
 export default function Work() {
   return (
@@ -25,7 +25,7 @@ export default function Work() {
       }
     >
       <div className={styles.wrapper}>
-        <p>티몬</p>
+        <ExperienceCard company="티몬" />
       </div>
       <Headline
         headline={
@@ -44,7 +44,7 @@ export default function Work() {
         }
       />
       <div className={styles.wrapper}>
-        <p>멋사</p>
+        <ExperienceCard company="멋쟁이사자처럼" />
       </div>
     </Section>
   );
