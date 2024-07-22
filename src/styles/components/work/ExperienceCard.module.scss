@@ -1,24 +1,20 @@
 .card {
-  width: 100%;
-  margin-top: 44px;
+  width: auto;
+  max-width: $content-size;
+  margin: 44px auto 0;
 }
 
 .info {
   $image-size: 80px;
   position: relative;
-  display: flex;
+  @include flex(center, null);
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  width: calc(100% - $image-size - 30px);
   height: $image-size;
   padding-left: $image-size + 30px;
   img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: inline-block;
-    width: $image-size;
-    height: $image-size;
+    @include absolute(0, null, null, 0);
+    @include rect($image-size);
   }
   .title {
     margin-bottom: 8px;

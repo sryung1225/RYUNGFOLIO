@@ -1,5 +1,6 @@
-$common-padding: 72px;
-$wave-height: 173px;
+@import './variables.scss';
+@import './Snow.module.scss';
+@import './Wave.module.scss';
 
 .wrapper {
   position: relative;
@@ -7,56 +8,9 @@ $wave-height: 173px;
   overflow: hidden;
 }
 
-/* snow */
-$count: 10;
-$size: 900px;
-$speed: 8s;
-$gradient: ();
-@for $i from 0 to $count {
-  $snow-size: random(4) + 2;
-  $snow-opacity: random(5) * 0.1 + 0.2;
-  $gradient: $gradient,
-    radial-gradient(
-      #{$snow-size}px
-        #{$snow-size}px
-        at
-        #{random($size - $snow-size * 2) +
-        $snow-size}px
-        #{random($size - $snow-size * 2) +
-        $snow-size}px,
-      rgba($color-white, $snow-opacity) 50%,
-      rgba($color-black, 0)
-    ) !global;
-}
-
-@keyframes snow {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY($size);
-  }
-}
-
-.snow {
-  position: absolute;
-  top: -$size;
-  left: 0;
-  right: 0;
-  display: block;
-  width: 100%;
-  height: calc((100dvh + $wave-height) * 2);
-  background-image: $gradient;
-  background-size: $size $size;
-  animation: snow $speed linear infinite;
-  z-index: 10;
-}
-
 .title_wrapper {
-  display: flex;
+  @include flex();
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: calc(100dvh - $common-padding * 2);
   padding: 72px 0;
   background-color: $color-black;
@@ -90,14 +44,13 @@ $gradient: ();
   animation: stretchFromCenter 2s 4s forwards;
   &::before,
   &::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
+    @include absolute(null, null, 4px, null);
     display: inline-block;
     width: 70px;
     height: 64px;
     opacity: 0;
     animation: fadeIn 0.5s 5s forwards;
+    content: '';
   }
   &::before {
     left: 4px;
@@ -147,44 +100,5 @@ $gradient: ();
     border-radius: 4px;
     opacity: 0;
     animation: scrollDown 1.5s 6s linear infinite;
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.wave_wrapper {
-  position: relative;
-  width: 100%;
-  height: $wave-height;
-  margin-bottom: 120px;
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  width: 6400px;
-  height: $wave-height;
-  background: url('/img/wave.svg') repeat-x;
-  animation: wave 20s linear infinite;
-  &:nth-of-type(1) {
-    top: -20px;
-    left: 0;
-  }
-  &:nth-of-type(2) {
-    top: -10px;
-    left: -100px;
-    opacity: 0.5;
-  }
-  &:nth-of-type(3) {
-    top: 0px;
-    left: -160px;
-    opacity: 0.2;
   }
 }

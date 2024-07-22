@@ -1,28 +1,22 @@
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: start;
+  @include flex(center, start);
   gap: 60px;
 }
 
 .gallery {
   position: relative;
   img {
-    display: inline-block;
-    width: 260px;
-    height: 260px;
+    @include rect(260px);
     border-radius: 40px;
   }
   &::after {
-    content: '';
-    position: absolute;
-    top: 206px;
-    right: 0;
+    @include absolute(206px, 0);
     display: inline-block;
     width: 90px;
     height: 60px;
     background: url('/img/tree_right.svg') no-repeat;
     background-size: contain;
+    content: '';
   }
 }
 
