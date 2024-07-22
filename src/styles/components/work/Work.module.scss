@@ -1,0 +1,6 @@
+.wrapper {
+  display: block;
+  & + h3 {
+    margin-top: 184px;
+  }
+}
