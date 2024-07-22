@@ -29,6 +29,11 @@ $padding-horiz: 40px;
 
 .subheadline {
   display: block;
+  margin-bottom: 3.75rem;
   font-size: $font-m;
   font-weight: 300;
+  line-height: 1.6rem;
+  @at-root .headline + & {
+    margin-top: -3rem;
+  }
 }
