@@ -6,6 +6,7 @@ export default function Education() {
   return (
     <Section
       id="education"
+      name="학력, 대외 활동 경험 및 자격증"
       headline={
         <>
           천천히 그리고 자세히 웹에 대해 알아가며 <br />
