@@ -50,11 +50,6 @@
     font-weight: 500;
   }
   p:nth-child(n + 3) {
-    text-indent: -9px;
-    padding-left: 16px;
-    &::before {
-      content: '·';
-      margin-right: 4px;
-    }
+    @include list-circle;
   }
 }

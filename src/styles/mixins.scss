@@ -47,3 +47,12 @@
   width: $size;
   height: $size;
 }
+
+@mixin list-circle {
+  text-indent: -9px;
+  padding-left: 16px;
+  &::before {
+    content: '·';
+    margin-right: 4px;
+  }
+}
