@@ -1,8 +1,27 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import '@/styles/global.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const aggro = localFont({
+  src: [
+    {
+      path: './fonts/SB-Aggro-M.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SB-Aggro-L.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/SB-Aggro-B.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-aggro',
+});
 
 export const metadata: Metadata = {
   title: '이성령 | 프론트엔드 개발자',
@@ -16,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.className}>{children}</body>
+      <body className={aggro.className}>{children}</body>
     </html>
   );
 }
