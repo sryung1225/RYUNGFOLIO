@@ -14,6 +14,7 @@ $padding-horiz: 40px;
   background-color: $color-red;
   border-radius: 20px;
   color: $color-white;
+  font-family: var(--font-aggro);
   font-size: $font-xl;
   font-weight: 700;
   line-height: $font-xl;
@@ -30,7 +31,8 @@ $padding-horiz: 40px;
 .subheadline {
   display: block;
   margin-bottom: 3.75rem;
-  font-size: $font-m;
+  color: $color-dark-gray;
+  font-size: $font-s;
   font-weight: 300;
   line-height: 1.6rem;
   @at-root .headline + & {

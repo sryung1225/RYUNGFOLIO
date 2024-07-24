@@ -1,5 +1,12 @@
 .wrapper {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  & > article {
+    width: 40%;
+    min-width: 400px;
+  }
   & + h3 {
     margin-top: 184px;
   }

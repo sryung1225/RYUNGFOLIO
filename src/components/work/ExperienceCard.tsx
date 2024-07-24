@@ -11,7 +11,7 @@ export default function ExperienceCard({ company }: { company: CompanyType }) {
   }
 
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.info}>
         <Image
           src={experience.image}
@@ -28,13 +28,12 @@ export default function ExperienceCard({ company }: { company: CompanyType }) {
           <li className={styles.do_item} key={item.title}>
             <h6 className={styles.title}>{item.title}</h6>
             <ul className={styles.description}>
-              {item.details.map((detail) => (
-                <li key={uuidv4()}>{detail}</li>
-              ))}
+              {item.details &&
+                item.details.map((detail) => <li key={uuidv4()}>{detail}</li>)}
             </ul>
           </li>
         ))}
       </ul>
-    </div>
+    </article>
   );
 }

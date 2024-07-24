@@ -10,5 +10,5 @@ export type CompanyType = '티몬' | '멋쟁이사자처럼';
 
 interface ProjectType {
   title: string;
-  details: string[];
+  details?: string[];
 }
