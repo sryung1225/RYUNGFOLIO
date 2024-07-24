@@ -1,6 +1,10 @@
 import localFont from 'next/font/local';
 
-// eslint-disable-next-line import/prefer-default-export
+export const pretendard = localFont({
+  src: '../../fonts/PretendardVariable.woff2',
+  variable: '--font-pretendard',
+});
+
 export const aggro = localFont({
   src: [
     {
