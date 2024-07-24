@@ -1,36 +1,19 @@
 @import 'reset';
 @import 'layout';
 
-/* font */
-@font-face {
-  font-family: 'SBAggro';
-  src: url('/fonts/SB-Aggro-M.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SBAggro';
-  src: url('/fonts/SB-Aggro-L.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'SBAggro';
-  src: url('/fonts/SB-Aggro-B.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-* {
-  color: $color-black;
-  font-family: 'SBAggro', sans-serif;
-}
-
 body {
   background-color: $color-white;
+  color: $color-black;
+  font-family: var(--font-pretendard), sans-serif;
   font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+[class*='title'] {
+  font-family: var(--font-aggro), sans-serif;
 }
 
 .a11yHidden {
