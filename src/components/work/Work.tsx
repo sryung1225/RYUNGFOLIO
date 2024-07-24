@@ -1,6 +1,5 @@
 import styles from '@/styles/components/work/Work.module.scss';
 import Section from '../common/Section';
-import Headline from '../common/Headline';
 import ExperienceCard from './ExperienceCard';
 
 export default function Work() {
