@@ -1,27 +1,6 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { aggro } from '@/components/common/fonts';
 import '@/styles/global.scss';
-
-const aggro = localFont({
-  src: [
-    {
-      path: './fonts/SB-Aggro-M.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: './fonts/SB-Aggro-L.ttf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: './fonts/SB-Aggro-B.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-aggro',
-});
 
 export const metadata: Metadata = {
   title: '이성령 | 프론트엔드 개발자',
