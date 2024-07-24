@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={aggro.className}>{children}</body>
+      <body className={aggro.variable}>{children}</body>
     </html>
   );
 }
