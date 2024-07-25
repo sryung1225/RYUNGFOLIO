@@ -1,7 +1,5 @@
 .card {
-  width: auto;
   max-width: $content-size;
-  margin: 44px auto 0;
 }
 
 .info {
@@ -40,7 +38,7 @@
     display: inline-block;
     font-family: var(--font-pretendard);
     font-size: $font-s;
-    font-weight: 500;
+    font-weight: 600;
     @include list-circle;
   }
   .description {

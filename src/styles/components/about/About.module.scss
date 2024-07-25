@@ -1,6 +1,7 @@
 .wrapper {
   @include flex(center, start);
   gap: 60px;
+  flex-wrap: wrap;
 }
 
 .gallery {

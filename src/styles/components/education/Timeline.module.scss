@@ -26,8 +26,9 @@
   position: relative;
   width: 80px;
   color: $color-red;
+  font-family: var(--font-aggro);
   font-size: $font-l;
-  font-weight: 500;
+  font-weight: 00;
   text-align: right;
   &::after {
     @include absolute(0);
@@ -47,7 +48,7 @@
   font-size: $font-s;
   line-height: $font-l;
   p:nth-child(2) {
-    font-weight: 500;
+    font-weight: 600;
   }
   p:nth-child(n + 3) {
     @include list-circle;
