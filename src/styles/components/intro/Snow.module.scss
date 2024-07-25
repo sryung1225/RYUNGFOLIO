@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+$count: 10;
+$size: 900px;
+$speed: 8s;
+$gradient: ();
+@for $i from 0 to $count {
+  $snow-size: random(4) + 2;
+  $snow-opacity: random(5) * 0.1 + 0.2;
+  $gradient: $gradient,
+    radial-gradient(
+      #{$snow-size}px
+        #{$snow-size}px
+        at
+        #{random($size - $snow-size * 2) +
+        $snow-size}px
+        #{random($size - $snow-size * 2) +
+        $snow-size}px,
+      rgba($color-white, $snow-opacity) 50%,
+      rgba($color-black, 0)
+    ) !global;
+}
+
+@keyframes snow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY($size);
+  }
+}
+
+.snow {
+  @include absolute(-$size, 0, null, 0);
+  display: block;
+  width: 100%;
+  height: calc((100dvh + $wave-height) * 2);
+  background-image: $gradient;
+  background-size: $size $size;
+  animation: snow $speed linear infinite;
+  z-index: 10;
+}

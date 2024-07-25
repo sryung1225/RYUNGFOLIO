@@ -1,0 +1,53 @@
+.card {
+  max-width: $content-size;
+}
+
+.info {
+  $image-size: 80px;
+  position: relative;
+  @include flex(center, null);
+  flex-direction: column;
+  width: calc(100% - $image-size - 30px);
+  height: $image-size;
+  padding-left: $image-size + 30px;
+  img {
+    @include absolute(0, null, null, 0);
+    @include rect($image-size);
+  }
+  .title {
+    margin-bottom: 8px;
+    font-size: $font-m;
+    font-weight: 500;
+  }
+  p {
+    font-size: $font-s;
+    line-height: 1.3;
+  }
+}
+
+.do_list {
+  display: block;
+  margin: 20px 0;
+}
+
+.do_item {
+  & + & {
+    margin-top: 10px;
+  }
+  .title {
+    display: inline-block;
+    font-family: var(--font-pretendard);
+    font-size: $font-s;
+    font-weight: 600;
+    @include list-circle;
+  }
+  .description {
+    li {
+      @include list-circle;
+      margin: 10px 0 10px 16px;
+      &:last-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

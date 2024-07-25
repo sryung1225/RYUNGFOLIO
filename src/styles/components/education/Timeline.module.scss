@@ -1,0 +1,56 @@
+.list {
+  position: relative;
+  width: auto;
+  max-width: $content-size;
+  margin: 0 auto;
+  &::after {
+    @include absolute(0, null, 0, 108px);
+    width: 4px;
+    height: 90%;
+    background-color: $color-red;
+    content: '';
+  }
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  gap: 60px;
+  & + & {
+    margin-top: 20px;
+  }
+}
+
+.year {
+  flex-shrink: 0;
+  position: relative;
+  width: 80px;
+  color: $color-red;
+  font-family: var(--font-aggro);
+  font-size: $font-l;
+  font-weight: 00;
+  text-align: right;
+  &::after {
+    @include absolute(0);
+    @include rect(16px);
+    margin-left: 18px;
+    background-color: $color-white;
+    border: 4px solid $color-red;
+    border-radius: 50%;
+    z-index: 1;
+    content: '';
+  }
+}
+
+.description {
+  flex-grow: 1;
+  margin-right: 20px;
+  font-size: $font-s;
+  line-height: $font-l;
+  p:nth-child(2) {
+    font-weight: 600;
+  }
+  p:nth-child(n + 3) {
+    @include list-circle;
+  }
+}

@@ -1,15 +1,13 @@
 import Image from 'next/image';
 import getProjects from '@/api/projects';
 import type { ProjectType } from '@/types/project';
-import Button from '@/components/common/Button';
 
 export default async function Projects() {
   const projects: ProjectType[] = await getProjects();
   console.log('프로젝트: ', projects);
   return (
     <main>
-      <h1>project</h1>s
-      <Button />
+      <h1>project</h1>
       <ul>
         {projects.map((project) => (
           <li key={project.id}>

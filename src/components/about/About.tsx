@@ -8,6 +8,7 @@ export default function About() {
   return (
     <Section
       id="about"
+      name="프로필 소개"
       headline={
         <>
           매일 하루 하루를 크리스마스처럼, <br />

@@ -1,0 +1,39 @@
+/* wave */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wave_wrapper {
+  position: relative;
+  width: 100%;
+  height: $wave-height;
+  margin-bottom: 120px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 6400px;
+  height: $wave-height;
+  background: url('/img/wave.svg') repeat-x;
+  animation: wave 20s linear infinite;
+  &:nth-of-type(1) {
+    top: -20px;
+    left: 0;
+  }
+  &:nth-of-type(2) {
+    top: -10px;
+    left: -100px;
+    opacity: 0.5;
+  }
+  &:nth-of-type(3) {
+    top: 0px;
+    left: -160px;
+    opacity: 0.2;
+  }
+}

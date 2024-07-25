@@ -1,7 +1,6 @@
 .title {
   height: 3.5rem * 4;
-  margin-top: 134px;
-  margin-bottom: 28px;
+  margin: 134px auto 28px;
   padding: 0 20px;
   z-index: 20;
 }
@@ -14,7 +13,7 @@
   text-align: center;
 }
 
-@media (max-width: 720px) {
+@media (max-width: $size-m) {
   .title {
     height: 2.5rem * 4;
   }
@@ -24,7 +23,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $size-s) {
   .title {
     height: 2rem * 4;
   }

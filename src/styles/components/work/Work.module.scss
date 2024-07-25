@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  margin-top: 44px;
+  & > article {
+    width: 40%;
+    min-width: 400px;
+    @media (max-width: 930px) {
+      & {
+        width: 70%;
+        min-width: 320px;
+      }
+    }
+  }
+  & + h3 {
+    margin-top: 184px;
+  }
+}
