@@ -1,0 +1,39 @@
+.card {
+  display: inline-block;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  box-shadow: 0px 0px 0px 0px $color-black;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  &:hover {
+    transform: translate(-10px, -10px);
+    border-color: $color-black;
+    box-shadow: 10px 10px 0px 0px $color-black;
+  }
+}
+
+.description {
+  margin: 20px;
+}
+
+.title {
+  font-size: 1.75rem;
+}
+
+.summary,
+.period {
+  line-height: 1.6;
+  color: $color-dark-gray;
+}
+
+.skills {
+  display: block;
+  margin-top: 6px;
+  li {
+    display: inline-block;
+    & + li {
+      margin-left: 6px;
+    }
+  }
+}
