@@ -1,4 +1,5 @@
 .card {
+  $shadow-size: 10px;
   display: inline-block;
   background-color: $color-white;
   border: 1px solid $color-gray;
@@ -7,9 +8,9 @@
   overflow: hidden;
   transition: all 0.5s ease;
   &:hover {
-    transform: translate(-10px, -10px);
+    transform: translate(-$shadow-size, -$shadow-size);
     border-color: $color-black;
-    box-shadow: 10px 10px 0px 0px $color-black;
+    box-shadow: $shadow-size $shadow-size 0px 0px $color-black;
   }
 }
 
@@ -19,6 +20,7 @@
 
 .title {
   font-size: 1.75rem;
+  @include hover-underline(card);
 }
 
 .summary,
