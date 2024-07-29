@@ -8,7 +8,7 @@ import getTimestamp from '@/utills/getTimestamp';
 import formattedPeriod from '@/utills/formattedPeriod';
 
 const converterSkillName = (skill: string) => {
-  return skill.toLowerCase().replace(/\./g, '');
+  return skill.toLowerCase().replace(/[.-]/g, '');
 };
 
 export default async function ProjectCard() {
@@ -48,7 +48,7 @@ export default async function ProjectCard() {
                     <li key={skill}>
                       <span className="a11yHidden">{skill}</span>
                       <Image
-                        src={`/img/skill_${converterSkillName(skill)}.svg`}
+                        src={`/img/skills/${converterSkillName(skill)}.svg`}
                         alt={skill}
                         width="24"
                         height="24"
