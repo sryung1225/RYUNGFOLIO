@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styles from '@/styles/components/projects/projectCard.module.scss';
 import { ProjectType } from '@/types/project';
 import getProjects from '@/api/projects';
+import getTimestamp from '@/utills/getTimestamp';
 
 const converterSkillName = (skill: string) => {
   return skill.toLowerCase().replace(/\./g, '');
@@ -9,6 +10,12 @@ const converterSkillName = (skill: string) => {
 
 export default async function ProjectCard() {
   const PROJECT: ProjectType[] = await getProjects();
+  PROJECT.sort((a, b) => {
+    if (a.endDate === null && b.endDate === null) return 0;
+    if (a.endDate === null) return -1;
+    if (b.endDate === null) return 1;
+    return getTimestamp(b.endDate) - getTimestamp(a.endDate);
+  });
   return (
     <>
       {PROJECT.map((work) => (
