@@ -3,6 +3,7 @@ import styles from '@/styles/components/projects/projectCard.module.scss';
 import { ProjectType } from '@/types/project';
 import getProjects from '@/api/projects';
 import getTimestamp from '@/utills/getTimestamp';
+import formattedPeriod from '@/utills/formattedPeriod';
 
 const converterSkillName = (skill: string) => {
   return skill.toLowerCase().replace(/\./g, '');
@@ -16,6 +17,7 @@ export default async function ProjectCard() {
     if (b.endDate === null) return 1;
     return getTimestamp(b.endDate) - getTimestamp(a.endDate);
   });
+
   return (
     <>
       {PROJECT.map((work) => (
@@ -34,7 +36,7 @@ export default async function ProjectCard() {
             <h5 className={styles.title}>{work.title}</h5>
             <p className={styles.summary}>{work.summary}</p>
             <p className={styles.period}>
-              {work.startDate} - {work.endDate}
+              {formattedPeriod(work.startDate, work.endDate)}
             </p>
             {work.skills && (
               <ul className={styles.skills}>
