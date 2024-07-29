@@ -3,3 +3,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 60px;
 }
+
+@media (max-width: $size-m) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}

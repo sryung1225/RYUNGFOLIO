@@ -14,8 +14,18 @@
   }
 }
 
+.thumbnail {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  font-size: 0;
+}
+
 .description {
   margin: 20px;
+  p {
+    margin: 6px 0;
+  }
 }
 
 .title {
@@ -23,15 +33,18 @@
   @include hover-underline(card);
 }
 
-.summary,
+.summary {
+  @include ellipsis;
+}
+
 .period {
-  line-height: 1.6;
   color: $color-dark-gray;
+  font-size: 0.8rem;
 }
 
 .skills {
   display: block;
-  margin-top: 6px;
+  margin-top: 10px;
   li {
     display: inline-block;
     & + li {

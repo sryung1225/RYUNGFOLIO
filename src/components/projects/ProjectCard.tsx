@@ -22,16 +22,17 @@ export default async function ProjectCard() {
     <>
       {PROJECT.map((work) => (
         <li className={styles.card} key={work.title}>
-          <Image
-            src={work.thumbnail || '/img/dummy.jpg'}
-            alt="RYUNGFOLIO"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-            width={500}
-            height={300}
-          />
+          <div className={styles.thumbnail}>
+            <Image
+              src={work.thumbnail || '/img/dummy.jpg'}
+              alt="RYUNGFOLIO"
+              sizes="500px"
+              fill
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+          </div>
           <div className={styles.description}>
             <h5 className={styles.title}>{work.title}</h5>
             <p className={styles.summary}>{work.summary}</p>
