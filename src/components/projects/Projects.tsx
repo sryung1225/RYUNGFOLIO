@@ -13,7 +13,6 @@ export default function Projects() {
     >
       <ul className={styles.wrapper}>
         <ProjectCard />
-        <ProjectCard />
       </ul>
     </Section>
   );
