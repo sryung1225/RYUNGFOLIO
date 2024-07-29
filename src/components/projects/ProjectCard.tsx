@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/components/projects/projectCard.module.scss';
 import { ProjectType } from '@/types/project';
@@ -22,39 +24,41 @@ export default async function ProjectCard() {
     <>
       {PROJECT.map((work) => (
         <li className={styles.card} key={work.title}>
-          <div className={styles.thumbnail}>
-            <Image
-              src={work.thumbnail || '/img/dummy.jpg'}
-              alt="RYUNGFOLIO"
-              sizes="500px"
-              fill
-              style={{
-                objectFit: 'cover',
-              }}
-            />
-          </div>
-          <div className={styles.description}>
-            <h5 className={styles.title}>{work.title}</h5>
-            <p className={styles.summary}>{work.summary}</p>
-            <p className={styles.period}>
-              {formattedPeriod(work.startDate, work.endDate)}
-            </p>
-            {work.skills && (
-              <ul className={styles.skills}>
-                {work.skills.split(', ').map((skill) => (
-                  <li key={skill}>
-                    <span className="a11yHidden">{skill}</span>
-                    <Image
-                      src={`/img/skill_${converterSkillName(skill)}.svg`}
-                      alt={skill}
-                      width="24"
-                      height="24"
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <Link href={`/project?id=${work.id}`}>
+            <div className={styles.thumbnail}>
+              <Image
+                src={work.thumbnail || '/img/dummy.jpg'}
+                alt="RYUNGFOLIO"
+                sizes="500px"
+                fill
+                style={{
+                  objectFit: 'cover',
+                }}
+              />
+            </div>
+            <div className={styles.description}>
+              <h5 className={styles.title}>{work.title}</h5>
+              <p className={styles.summary}>{work.summary}</p>
+              <p className={styles.period}>
+                {formattedPeriod(work.startDate, work.endDate)}
+              </p>
+              {work.skills && (
+                <ul className={styles.skills}>
+                  {work.skills.split(', ').map((skill) => (
+                    <li key={skill}>
+                      <span className="a11yHidden">{skill}</span>
+                      <Image
+                        src={`/img/skill_${converterSkillName(skill)}.svg`}
+                        alt={skill}
+                        width="24"
+                        height="24"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </Link>
         </li>
       ))}
     </>
