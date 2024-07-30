@@ -9,7 +9,7 @@ export default async function ExperienceCard() {
   return (
     <>
       {EXPEREINCES.map((experience) => (
-        <article className={styles.card} key={experience.company}>
+        <li className={styles.card} key={experience.company}>
           <div className={styles.info}>
             <Image
               src={experience.logo}
@@ -34,7 +34,7 @@ export default async function ExperienceCard() {
               </li>
             ))}
           </ul>
-        </article>
+        </li>
       ))}
     </>
   );

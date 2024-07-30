@@ -25,9 +25,9 @@ export default function Work() {
         </>
       }
     >
-      <div className={styles.wrapper}>
+      <ul className={styles.wrapper}>
         <ExperienceCard />
-      </div>
+      </ul>
     </Section>
   );
 }
