@@ -1,6 +1,6 @@
 import instance from './axiosInstance';
 
-async function getWorks() {
+async function getWorkExperiences() {
   try {
     const response = await instance.get(`/works?select=*,works_projects(*)`);
     console.log('데이터 패칭 성공', response.data);
@@ -11,4 +11,4 @@ async function getWorks() {
   }
 }
 
-export default getWorks;
+export default getWorkExperiences;

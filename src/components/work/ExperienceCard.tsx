@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styles from '@/styles/components/work/ExperienceCard.module.scss';
 import { WorkExperienceType } from '@/types/work_experience';
+import getWorkExperiences from '@/api/workExperiences';
 import { v4 as uuidv4 } from 'uuid';
-import getWorks from '@/api/works';
 
 export default async function ExperienceCard() {
-  const WORKS: WorkExperienceType[] = await getWorks();
+  const EXPEREINCES: WorkExperienceType[] = await getWorkExperiences();
   return (
     <>
-      {WORKS.map((experience) => (
+      {EXPEREINCES.map((experience) => (
         <article className={styles.card} key={experience.company}>
           <div className={styles.info}>
             <Image
