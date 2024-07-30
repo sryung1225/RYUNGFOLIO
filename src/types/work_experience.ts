@@ -1,9 +1,9 @@
 export interface WorkExperienceType {
   company: CompanyType;
-  image: string;
+  logo: string;
   period: string;
   position: string;
-  projects: ProjectType[];
+  works_projects: ProjectType[];
 }
 
 export type CompanyType = '티몬' | '멋쟁이사자처럼';
