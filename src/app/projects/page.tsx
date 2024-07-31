@@ -11,17 +11,17 @@ export default async function Projects() {
       <ul>
         {projects.map((project) => (
           <li key={project.id}>
-            <h2>{project.name}</h2>
+            <h2>{project.title}</h2>
             <p>
               {project.startDate} - {project.endDate}
             </p>
-            <p>{project.skill}</p>
+            <p>{project.skills}</p>
             <p>{project.member}</p>
             <p>{project.role}</p>
             {project.thumbnail ? (
               <Image
                 src={project.thumbnail}
-                alt={`${project.name} 대표 이미지`}
+                alt={`${project.title} 대표 이미지`}
                 width="800"
                 height="300"
               />

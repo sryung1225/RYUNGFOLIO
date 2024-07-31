@@ -25,10 +25,9 @@ export default function Work() {
         </>
       }
     >
-      <div className={styles.wrapper}>
-        <ExperienceCard company="멋쟁이사자처럼" />
-        <ExperienceCard company="티몬" />
-      </div>
+      <ul className={styles.wrapper}>
+        <ExperienceCard />
+      </ul>
     </Section>
   );
 }

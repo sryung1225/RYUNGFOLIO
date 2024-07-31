@@ -23,9 +23,6 @@
   padding-left: 14px;
   line-height: 2rem;
   a {
-    transition: 0.3s all ease;
-    &:hover {
-      background-color: $color-light-red;
-    }
+    @include hover-underline;
   }
 }

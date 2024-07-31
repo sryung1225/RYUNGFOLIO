@@ -11,37 +11,37 @@ export type Database = {
     Tables: {
       projects: {
         Row: {
-          description: string | null;
           endDate: string | null;
           id: number;
           member: string | null;
-          name: string | null;
           role: string | null;
-          skill: string | null;
+          skills: string | null;
           startDate: string | null;
+          summary: string | null;
           thumbnail: string | null;
+          title: string;
         };
         Insert: {
-          description?: string | null;
           endDate?: string | null;
           id?: number;
           member?: string | null;
-          name?: string | null;
           role?: string | null;
-          skill?: string | null;
+          skills?: string | null;
           startDate?: string | null;
+          summary?: string | null;
           thumbnail?: string | null;
+          title?: string;
         };
         Update: {
-          description?: string | null;
           endDate?: string | null;
           id?: number;
           member?: string | null;
-          name?: string | null;
           role?: string | null;
-          skill?: string | null;
+          skills?: string | null;
           startDate?: string | null;
+          summary?: string | null;
           thumbnail?: string | null;
+          title?: string;
         };
         Relationships: [];
       };
