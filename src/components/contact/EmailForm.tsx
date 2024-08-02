@@ -31,7 +31,7 @@ export default function EmailForm() {
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="name">
-        <span className="a11yHidden">이름 / 소속</span>
+        <span className="a11yHidden">보내는 사람의 이름 또는 소속</span>
         <input
           id="name"
           type="text"
@@ -43,10 +43,10 @@ export default function EmailForm() {
         />
       </label>
       <label htmlFor="email">
-        <span className="a11yHidden">보내는 사람 이메일</span>
+        <span className="a11yHidden">보내는 사람의 이메일</span>
         <input
           id="email"
-          type="text"
+          type="email"
           name="email"
           placeholder="이메일"
           value={contact.email}
@@ -55,7 +55,7 @@ export default function EmailForm() {
         />
       </label>
       <label htmlFor="content">
-        <span className="a11yHidden">문의할 내용</span>
+        <span className="a11yHidden">문의 남길 내용</span>
         <textarea
           id="content"
           name="content"
