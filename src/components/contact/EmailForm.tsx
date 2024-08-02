@@ -1,12 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-interface ContactType {
-  email: string;
-  name: string;
-  content: string;
-}
+import ContactType from '@/types/contact';
 
 const initialContact: ContactType = {
   email: '',
