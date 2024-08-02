@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import sendContactEmail from '@/api/contact';
 import ContactType from '@/types/contact';
 
 const initialContact: ContactType = {
@@ -24,7 +25,7 @@ export default function EmailForm() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(contact);
+    sendContactEmail({ ...contact });
   };
 
   return (
