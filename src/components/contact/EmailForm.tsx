@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import sendContactEmail from '@/api/contact';
 import ContactType from '@/types/contact';
+import sendContactEmail from '@/api/contact';
 
 const initialContact: ContactType = {
   email: '',
@@ -54,14 +54,14 @@ export default function EmailForm() {
           required
         />
       </label>
-      <label htmlFor="message">
+      <label htmlFor="content">
         <span className="a11yHidden">문의할 내용</span>
         <textarea
-          id="message"
-          name="message"
+          id="content"
+          name="content"
           rows={10}
           placeholder="문의 내용을 작성해주세요."
-          value={contact.name}
+          value={contact.content}
           onChange={onChange}
           required
         />
