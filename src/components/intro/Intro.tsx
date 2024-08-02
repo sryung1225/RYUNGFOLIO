@@ -1,8 +1,19 @@
+'use client';
+
 import { v4 as uuidv4 } from 'uuid';
 import styles from '@/styles/components/intro/Intro.module.scss';
+import { useEffect } from 'react';
 import Title from './Title';
 
 export default function Intro() {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    const timer = setTimeout(() => {
+      console.log('5초 멈춰!');
+      document.body.style.overflow = 'unset';
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <section className={styles.wrapper}>
       <div className={styles.snow} />
