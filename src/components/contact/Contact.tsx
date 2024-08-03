@@ -9,10 +9,10 @@ export default function Contact() {
         저와 나누고 싶은 이야기가 있다면 <br />
         편하게 메세지 남겨주세요.
       </h3>
-      <h4 className={styles.subheadline}>
+      <p className={styles.subheadline}>
         여러 사람을 만나고 함께 일해보고 싶습니다. <br />
         메일을 보내주시면 확인 후 1-2일 내로 답장 드리겠습니다.
-      </h4>
+      </p>
       <EmailForm />
     </section>
   );

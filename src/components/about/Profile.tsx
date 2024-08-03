@@ -9,7 +9,7 @@ export default function Profile() {
     <ul className={styles.list}>
       {PROFILE_DATA.map((Item) => (
         <li key={Item.title}>
-          <h5 className={styles.title}>{Item.title}</h5>
+          <h4 className={styles.title}>{Item.title}</h4>
           <dl className={styles.detail}>
             {Item.details.map((detail) => (
               <React.Fragment key={uuidv4()}>

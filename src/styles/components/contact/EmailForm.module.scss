@@ -26,7 +26,7 @@
   .label {
     display: block;
     margin: 0 0 8px 4px;
-    font-family: var(--font-aggro);
+    font-family: var(--font-aggro), sans-serif;
     font-weight: 300;
   }
   input,
@@ -61,7 +61,7 @@
   @include common-style(140px);
   margin: 0 auto;
   font-size: $font-s;
-  font-family: var(--font-aggro);
+  font-family: var(--font-aggro), sans-serif;
   font-weight: 300;
   &:hover,
   &:focus {

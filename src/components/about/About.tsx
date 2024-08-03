@@ -29,7 +29,7 @@ export default function About() {
           />
           <div className={styles.name}>
             <p className={styles.eng}>LEE SUNG RYUNG</p>
-            <h5 className={styles.kor}>이 성 령</h5>
+            <h4 className={styles.kor}>이 성 령</h4>
             <p className={styles.birth}>1996. 12. 25</p>
           </div>
         </div>
