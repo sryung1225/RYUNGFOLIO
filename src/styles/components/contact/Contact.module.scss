@@ -7,3 +7,22 @@ $padding-horiz: 40px;
   margin: 0 auto;
   padding: 112px $padding-horiz 72px;
 }
+
+.headline {
+  display: block;
+  margin: 2.5rem 0 0.5rem;
+  font-size: $font-xl;
+  font-weight: 500;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.subheadline {
+  display: block;
+  margin-bottom: 3.75rem;
+  color: $color-dark-gray;
+  font-size: $font-s;
+  font-weight: 300;
+  line-height: 1.6rem;
+  text-align: center;
+}

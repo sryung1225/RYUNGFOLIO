@@ -1,0 +1,78 @@
+@mixin common-style($width: 100%) {
+  width: $width;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  border-radius: 20px;
+  color: $color-black;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  &:hover {
+    border-color: $color-black;
+  }
+  &:focus {
+    outline-color: $color-black;
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: $content-size;
+  margin: 0 auto;
+  .label {
+    display: block;
+    margin: 0 0 8px 4px;
+    font-family: var(--font-aggro);
+    font-weight: 300;
+  }
+  input,
+  textarea {
+    @include common-style;
+  }
+}
+
+.content {
+  grid-column: 1 / -1;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(-30deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) rotate(30deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+}
+
+.submit {
+  position: relative;
+  grid-column: 1 / -1;
+  display: inline-block;
+  @include common-style(140px);
+  margin: 0 auto;
+  font-size: $font-s;
+  font-family: var(--font-aggro);
+  font-weight: 300;
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    &::after {
+      @include center;
+      @include rect(30px);
+      background: url('/img/mail.svg') center;
+      background-size: contain;
+      animation: shake 0.5s 0.2s;
+      content: '';
+    }
+  }
+}

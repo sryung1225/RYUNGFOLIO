@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ContactType from '@/types/contact';
 import sendContactEmail from '@/api/contact';
+import styles from '@/styles/components/contact/EmailForm.module.scss';
 
 const initialContact: ContactType = {
   email: '',
@@ -29,44 +30,46 @@ export default function EmailForm() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className={styles.form}>
       <label htmlFor="name">
-        <span className="a11yHidden">보내는 사람의 이름 또는 소속</span>
+        <span className={styles.label}>이름 / 소속</span>
         <input
           id="name"
           type="text"
           name="name"
-          placeholder="이름 / 소속"
+          placeholder="☃ ☃ ☃"
           value={contact.name}
           onChange={onChange}
           required
         />
       </label>
       <label htmlFor="email">
-        <span className="a11yHidden">보내는 사람의 이메일</span>
+        <span className={styles.label}>이메일</span>
         <input
           id="email"
           type="email"
           name="email"
-          placeholder="이메일"
+          placeholder="example@email.com"
           value={contact.email}
           onChange={onChange}
           required
         />
       </label>
-      <label htmlFor="content">
-        <span className="a11yHidden">문의 남길 내용</span>
+      <label htmlFor="content" className={styles.content}>
+        <span className={styles.label}>내용</span>
         <textarea
           id="content"
           name="content"
-          rows={10}
-          placeholder="문의 내용을 작성해주세요."
+          rows={6}
+          placeholder="궁금한 내용이 있다면 편하게 남겨주세요 :)"
           value={contact.content}
           onChange={onChange}
           required
         />
       </label>
-      <button type="submit">메일 보내기</button>
+      <button type="submit" className={styles.submit}>
+        메일 보내기
+      </button>
     </form>
   );
 }
