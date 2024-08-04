@@ -1,5 +1,10 @@
+import { SyncLoader } from 'react-spinners';
 import styles from '@/styles/components/common/Loading.module.scss';
 
 export default function Loading() {
-  return <p className={styles.loading}>로딩중</p>;
+  return (
+    <div className={styles.dimmed}>
+      <SyncLoader color="#c5554d" margin={6} />
+    </div>
+  );
 }
