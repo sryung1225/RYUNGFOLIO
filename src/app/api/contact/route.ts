@@ -6,13 +6,23 @@ export async function POST(req: Request) {
   return sendEmail(body)
     .then(
       () =>
-        new Response(JSON.stringify({ message: '메일 전송 성공 😎' }), {
-          status: 200,
-        }),
+        new Response(
+          JSON.stringify({
+            message: '전송 성공!\n곧 회신드릴게요',
+          }),
+          {
+            status: 200,
+          },
+        ),
     )
     .catch(() => {
-      return new Response(JSON.stringify({ message: '메일 전송 실패 💩' }), {
-        status: 500,
-      });
+      return new Response(
+        JSON.stringify({
+          message: '전송 실패\n잠시 후 다시 시도해주세요',
+        }),
+        {
+          status: 500,
+        },
+      );
     });
 }

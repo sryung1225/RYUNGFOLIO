@@ -7,7 +7,7 @@ export default function Contact() {
       <h2 className="a11yHidden">메세지 보내기</h2>
       <h3 className={styles.headline}>
         저와 나누고 싶은 이야기가 있다면 <br />
-        편하게 메세지 남겨주세요.
+        편하게 메세지를 남겨주세요.
       </h3>
       <p className={styles.subheadline}>
         여러 사람을 만나고 함께 일해보고 싶습니다. <br />

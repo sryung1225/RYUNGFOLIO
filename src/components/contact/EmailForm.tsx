@@ -31,15 +31,18 @@ export default function EmailForm() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    sendContactEmail({ ...contact });
     setIsLoading(true);
     try {
-      await sendContactEmail({ ...contact });
-      setAlertMessage('이메일이 성공적으로 전송되었습니다!');
+      const data = await sendContactEmail({ ...contact });
+      setAlertMessage(data.message);
       setIsAlertOpen(true);
       setContact(initialContact);
     } catch (error) {
-      setAlertMessage('이메일 전송에 실패했습니다. 잠시 후 다시 시도해주세요.');
+      if (error instanceof Error) {
+        setAlertMessage(error.message);
+      } else {
+        setAlertMessage('문제가 발생했어요\n다음에 시도해주세요');
+      }
     } finally {
       setIsLoading(false);
       setTimeout(() => {
