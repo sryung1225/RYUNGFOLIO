@@ -24,7 +24,7 @@ export function sendEmail({ email, name, content }: ContactType) {
     from: email,
     subject: `[RYUNGFOLIO] ${name}`,
     html: `
-      <div>${content}</div>
+      <pre>${content}</pre>
       <br />
       <p>보낸이 : ${name} (${email})</p>
     `,
