@@ -1,11 +1,37 @@
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .alert {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
-  padding: 40px;
-  background-color: $color-red;
-  border: 1px solid $color-gray;
+  padding: 16px 20px;
+  background-color: $color-black;
+  border-radius: 20px;
+  color: $color-white;
   z-index: 100;
+  opacity: 0;
+  animation: fadeInOut 3s forwards;
+}
+
+.message {
+  text-align: center;
+  font-size: $font-s;
+  &:nth-child(1) {
+    font-family: var(--font-aggro);
+    font-size: $font-m;
+    line-height: 1.8;
+  }
 }
