@@ -2,7 +2,11 @@ import Image from 'next/image';
 import { getProjectDetail } from '@/api/projects';
 import type { ProjectType } from '@/types/project';
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default async function ProjectDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const id = params;
   const project: ProjectType = await getProjectDetail(id);
   console.log('프로젝트 개별 데이터: ', project);

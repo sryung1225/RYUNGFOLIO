@@ -7,7 +7,7 @@ import Projects from '@/components/projects/Projects';
 import Contact from '@/components/contact/Contact';
 import Footer from '@/components/common/Footer';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       <Header />

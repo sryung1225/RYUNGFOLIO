@@ -1,34 +1,24 @@
-import Image from 'next/image';
 import getProjects from '@/api/projects';
-import type { ProjectType } from '@/types/project';
+import ProjectCard from '@/components/projects/ProjectCard';
+import { ProjectType } from '@/types/project';
+import getTimestamp from '@/utills/getTimestamp';
+import styles from '@/styles/components/projects/Projects.module.scss';
 
-export default async function Projects() {
+export default async function ProjectsPage() {
   const projects: ProjectType[] = await getProjects();
-  console.log('프로젝트: ', projects);
+  projects.sort((a, b) => {
+    if (a.endDate === null && b.endDate === null) return 0;
+    if (a.endDate === null) return -1;
+    if (b.endDate === null) return 1;
+    return getTimestamp(b.endDate) - getTimestamp(a.endDate);
+  });
   return (
     <main>
-      <h1>project</h1>
-      <ul>
+      <h1>PROJECTS</h1>
+      <h2 className="a11yHidden">작업한 프로젝트 목록</h2>
+      <ul className={styles.wrapper}>
         {projects.map((project) => (
-          <li key={project.id}>
-            <h2>{project.title}</h2>
-            <p>
-              {project.startDate} - {project.endDate}
-            </p>
-            <p>{project.skills}</p>
-            <p>{project.member}</p>
-            <p>{project.role}</p>
-            {project.thumbnail ? (
-              <Image
-                src={project.thumbnail}
-                alt={`${project.title} 대표 이미지`}
-                width="800"
-                height="300"
-              />
-            ) : (
-              <p>대표 이미지 없음</p>
-            )}
-          </li>
+          <ProjectCard key={project.id} project={project} />
         ))}
       </ul>
     </main>
