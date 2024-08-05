@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { pretendard, aggro } from '@/components/common/fonts';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 import '@/styles/global.scss';
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${pretendard.variable} ${aggro.variable}`}>
-        {children}
+        <main>
+          <Header />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
