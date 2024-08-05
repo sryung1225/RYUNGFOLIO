@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/components/projects/projectCard.module.scss';
+import styles from '@/styles/components/projects/ProjectCard.module.scss';
 import { ProjectType } from '@/types/project';
 import formattedPeriod from '@/utills/formattedPeriod';
 
