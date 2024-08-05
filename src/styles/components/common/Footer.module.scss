@@ -1,9 +1,10 @@
 .footer {
   width: 100%;
   padding: 10px 0;
-  background-color: $color-black;
+  border-top: 1px solid $color-gray;
+  background-color: $color-white;
   & > p {
-    color: $color-white;
+    color: $color-black;
     font-size: $font-xs;
     font-weight: 100;
     text-align: center;
