@@ -1,13 +1,16 @@
 @keyframes fadeInOut {
   0% {
+    transform: translate(-50%, -20%);
     opacity: 0;
   }
   20%,
   80% {
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
   100% {
     opacity: 0;
+    transform: translate(-50%, -20%);
   }
 }
 
