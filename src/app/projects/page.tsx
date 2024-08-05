@@ -1,4 +1,4 @@
-import getProjects from '@/api/projects';
+import getProjects from '@/services/projects';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { ProjectType } from '@/types/project';
 import getTimestamp from '@/utills/getTimestamp';

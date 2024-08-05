@@ -1,4 +1,4 @@
-import { sendEmail } from '@/api/nodemailer';
+import { sendEmail } from '@/services/nodemailer';
 
 // eslint-disable-next-line import/prefer-default-export
 export async function POST(req: Request) {

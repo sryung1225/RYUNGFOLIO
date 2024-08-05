@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from '@/styles/components/work/ExperienceCard.module.scss';
 import { WorkExperienceType } from '@/types/work_experience';
-import getWorkExperiences from '@/api/workExperiences';
+import getWorkExperiences from '@/services/workExperiences';
 import { v4 as uuidv4 } from 'uuid';
 
 export default async function ExperienceCard() {

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getProjectDetail } from '@/api/projects';
+import { getProjectDetail } from '@/services/projects';
 import type { ProjectType } from '@/types/project';
 
 export default async function ProjectDetailPage({
