@@ -24,7 +24,7 @@ export default async function ProjectCard() {
     <>
       {PROJECT.map((work) => (
         <li className={styles.card} key={work.title}>
-          <Link href={`/project?id=${work.id}`}>
+          <Link href={`/projects/${work.id}`}>
             <div className={styles.thumbnail}>
               <Image
                 src={work.thumbnail || '/img/dummy.jpg'}
