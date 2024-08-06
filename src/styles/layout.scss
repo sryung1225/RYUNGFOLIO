@@ -1,0 +1,9 @@
+$padding-horiz: 40px;
+
+section {
+  width: calc(100% - $padding-horiz * 2);
+  max-width: calc($size-default - $padding-horiz * 2);
+  height: auto;
+  margin: 0 auto;
+  padding: 112px $padding-horiz 72px;
+}

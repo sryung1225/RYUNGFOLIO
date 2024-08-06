@@ -11,7 +11,7 @@ export default async function ProjectDetailPage({
   const project: ProjectType = await getProjectDetail(id);
   console.log('프로젝트 개별 데이터: ', project);
   return (
-    <main>
+    <section>
       <h2>{project.title}</h2>
       <p>
         {project.startDate} - {project.endDate}
@@ -19,17 +19,13 @@ export default async function ProjectDetailPage({
       <p>{project.skills}</p>
       <p>{project.member}</p>
       <p>{project.role}</p>
-      {project.thumbnail ? (
-        <Image
-          src={project.thumbnail}
-          alt={`${project.title} 대표 이미지`}
-          width="800"
-          height="300"
-          priority
-        />
-      ) : (
-        <p>대표 이미지 없음</p>
-      )}
-    </main>
+      <Image
+        src={project.thumbnail || '/img/dummy.jpg'}
+        alt={`${project.title} 대표 이미지`}
+        width="800"
+        height="300"
+        priority
+      />
+    </section>
   );
 }

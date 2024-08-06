@@ -19,7 +19,7 @@ function Section({
   children,
 }: SectionPropsType) {
   return (
-    <section id={id} className={styles.section}>
+    <section id={id}>
       <h2 className="a11yHidden">{name}</h2>
       <Link href={`#${id}`} className={styles.hashtag}>
         # {id.toUpperCase()}
