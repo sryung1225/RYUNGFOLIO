@@ -11,7 +11,7 @@ export default function About() {
       name="프로필 소개"
       headline={
         <>
-          매일 하루를 크리스마스처럼!
+          매일 하루를 크리스마스처럼 ❄
           <br />
           기분 좋은 경험을 제공하는 서비스를 만들고픈 <br />
           개발자 <span className="point_green">이성령</span>입니다. <br />

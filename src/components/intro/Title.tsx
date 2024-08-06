@@ -7,7 +7,7 @@ import styles from '@/styles/intro/Title.module.scss';
 
 const textData = [
   '안녕하세요',
-  `<span class="point_yellow">다양한 사용자</span>를 고민하는`,
+  `<span class="point_yellow">다양한 사용자</span>를 생각하는`,
   `웹 <span class="point_red">프론트엔드</span> 개발자`,
   `<span class="point_green">이성령</span> 입니다`,
 ];
