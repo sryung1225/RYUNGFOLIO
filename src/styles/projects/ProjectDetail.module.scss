@@ -1,0 +1,84 @@
+@import './Title.module.scss';
+
+.wrapper {
+  // overflow-x: hidden;
+}
+
+.back {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 10px 16px 10px 30px;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  border-radius: 20px;
+  color: $color-black;
+  font-size: 1rem;
+  font-family: var(--font-aggro), sans-serif;
+  font-weight: 300;
+  transition: all 0.5s ease;
+  &::before {
+    @include absolute(14px, null, null, 14px);
+    @include rect(8px);
+    border-left: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    content: '';
+  }
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    border-color: $color-black;
+    color: $color-white;
+    &::before {
+      border-color: $color-white;
+    }
+  }
+}
+
+.summary {
+  color: $color-dark-gray;
+  font-size: $font-m;
+  font-family: var(--font-aggro), sans-serif;
+  font-weight: 300;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border: 1px solid $color-gray;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+  width: 100%;
+  line-height: 24px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+    padding-right: 4px;
+    border: 1px solid $color-gray;
+    border-radius: 6px;
+    line-height: 24px;
+    box-sizing: border-box;
+    img {
+      margin-left: -1px;
+    }
+  }
+}

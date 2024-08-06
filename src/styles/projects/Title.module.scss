@@ -1,0 +1,42 @@
+@keyframes fillStretch {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 10%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.title {
+  position: relative;
+  margin-left: -4px;
+  color: $color-white;
+  font-size: 4rem;
+  -webkit-text-stroke: 1px $color-black;
+  &::before {
+    @include absolute(0, null, null, 0);
+    width: 0;
+    overflow: hidden;
+    color: $color-black;
+    animation: fillStretch 4s 1s forwards;
+    transition: all 0.5s ease;
+    content: attr(data-text);
+  }
+  @media (max-width: $size-m) {
+    & {
+      font-size: 3rem;
+    }
+  }
+  @media (max-width: $size-s) {
+    & {
+      color: $color-black;
+      word-break: break-all;
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
