@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
-import styles from '@/styles/components/common/Section.module.scss';
+import styles from '@/styles/common/Section.module.scss';
 import Headline from './Headline';
 
 interface SectionPropsType {

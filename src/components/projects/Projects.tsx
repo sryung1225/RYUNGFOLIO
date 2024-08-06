@@ -1,5 +1,5 @@
 import Section from '@/components/common/Section';
-import styles from '@/styles/components/projects/Projects.module.scss';
+import styles from '@/styles/projects/Projects.module.scss';
 import { ProjectType } from '@/types/project';
 import getProjects from '@/services/projects';
 import getTimestamp from '@/utills/getTimestamp';

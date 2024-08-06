@@ -1,4 +1,4 @@
-import styles from '@/styles/components/about/About.module.scss';
+import styles from '@/styles/about/About.module.scss';
 import Image from 'next/image';
 import React from 'react';
 import Section from '../common/Section';

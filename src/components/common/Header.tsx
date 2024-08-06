@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@/styles/components/common/Header.module.scss';
+import styles from '@/styles/common/Header.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
 

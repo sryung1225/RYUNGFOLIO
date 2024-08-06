@@ -2,7 +2,7 @@ import getProjects from '@/services/projects';
 import ProjectCard from '@/components/projects/ProjectCard';
 import { ProjectType } from '@/types/project';
 import getTimestamp from '@/utills/getTimestamp';
-import styles from '@/styles/components/projects/Projects.module.scss';
+import styles from '@/styles/projects/Projects.module.scss';
 
 export default async function ProjectsPage() {
   const projects: ProjectType[] = await getProjects();

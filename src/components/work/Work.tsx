@@ -1,4 +1,4 @@
-import styles from '@/styles/components/work/Work.module.scss';
+import styles from '@/styles/work/Work.module.scss';
 import Section from '../common/Section';
 import ExperienceCard from './ExperienceCard';
 

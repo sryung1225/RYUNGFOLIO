@@ -1,4 +1,4 @@
-import styles from '@/styles/components/contact/Alert.module.scss';
+import styles from '@/styles/contact/Alert.module.scss';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Alert({ message }: { message: string }) {

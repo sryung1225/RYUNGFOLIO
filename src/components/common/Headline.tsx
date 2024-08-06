@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from '@/styles/components/common/Section.module.scss';
+import styles from '@/styles/common/Section.module.scss';
 
 interface HeadlinePropsType {
   headline: ReactNode;

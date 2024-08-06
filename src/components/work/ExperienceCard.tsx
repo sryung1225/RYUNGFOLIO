@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/components/work/ExperienceCard.module.scss';
+import styles from '@/styles/work/ExperienceCard.module.scss';
 import { WorkExperienceType } from '@/types/work_experience';
 import getWorkExperiences from '@/services/workExperiences';
 import { v4 as uuidv4 } from 'uuid';

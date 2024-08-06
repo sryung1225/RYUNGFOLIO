@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import TIMELINE from '@/constants/timeline';
-import styles from '@/styles/components/education/Timeline.module.scss';
+import styles from '@/styles/education/Timeline.module.scss';
 
 export default function Timeline() {
   return (

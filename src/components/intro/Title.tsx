@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import DOMPurify from 'dompurify';
-import styles from '@/styles/components/intro/Title.module.scss';
+import styles from '@/styles/intro/Title.module.scss';
 
 const textData = [
   '안녕하세요',
