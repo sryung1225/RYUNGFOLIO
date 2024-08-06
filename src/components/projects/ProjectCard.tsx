@@ -3,10 +3,7 @@ import Image from 'next/image';
 import styles from '@/styles/projects/ProjectCard.module.scss';
 import { ProjectType } from '@/types/project';
 import formattedPeriod from '@/utills/formattedPeriod';
-
-const converterSkillName = (skill: string) => {
-  return skill.toLowerCase().replace(/[.-]/g, '');
-};
+import formattedSkillName from '@/utills/formattedSkillName';
 
 export default async function ProjectCard({
   project,
@@ -39,7 +36,7 @@ export default async function ProjectCard({
                 <li key={skill}>
                   <span className="a11yHidden">{skill}</span>
                   <Image
-                    src={`/img/skills/${converterSkillName(skill)}.svg`}
+                    src={`/img/skills/${formattedSkillName(skill)}.svg`}
                     alt={skill}
                     width="24"
                     height="24"
