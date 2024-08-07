@@ -1,32 +1,43 @@
 'use client';
 
-import styles from '@/styles/common/Header.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import styles from '@/styles/common/Header.module.scss';
 
 export default function Header() {
-  const [openNav, setOpenNav] = useState(false);
-  const toggleNav = () => {
-    if (openNav) {
-      setOpenNav(false);
-    } else {
-      setOpenNav(true);
-    }
-  };
+  const [isScrolledPast, setIsScrolledPast] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutElement = document.getElementById('about');
+      if (aboutElement) {
+        const aboutPosition = aboutElement.getBoundingClientRect().top;
+        if (aboutPosition <= 100) {
+          setIsScrolledPast(true);
+        } else {
+          setIsScrolledPast(false);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={isScrolledPast ? styles.header_black : styles.header_white}
+    >
       <Image
         className={styles.logo}
-        src="/img/logo.svg"
+        src={isScrolledPast ? '/img/logo_black.svg' : '/img/logo_white.svg'}
         alt="로고"
         width="40"
         height="40"
         priority
       />
-      <button type="button" className={styles.navButton} onClick={toggleNav}>
-        <Image src="/img/nav.svg" alt="네비게이션" width="30" height="26" />
-      </button>
-      {openNav && <nav className={styles.nav} />}
+      <span className={styles.email}>sryung1225@gmail.com</span>
     </header>
   );
 }

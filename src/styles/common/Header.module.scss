@@ -1,16 +1,31 @@
 .header {
   @include fixed(0, 0, null, 0);
   @include flex(space-between);
-  width: calc(100% - 60px);
-  height: 40px;
-  padding: 24px 30px;
-  background-color: rgba($color-black, 0.6);
+  width: 100%;
+  height: 68px;
+  padding: 16px 24px;
+  border-bottom: 1px solid $color-gray;
+  box-sizing: border-box;
   z-index: 20;
+  &_white {
+    @extend .header;
+    color: $color-white;
+  }
+  &_black {
+    @extend .header;
+    color: $color-black;
+  }
 }
 
 .logo {
   flex-shrink: 0;
   @include rect(40px);
+}
+
+.email {
+  font-family: var(--font-aggro);
+  font-weight: 300;
+  // color: $color-white;
 }
 
 .navButton {
