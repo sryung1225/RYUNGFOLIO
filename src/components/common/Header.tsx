@@ -33,9 +33,7 @@ export default function Header() {
         height="40"
         priority
       />
-      {isScrolledPast && (
-        <span className={styles.email}>sryung1225@gmail.com</span>
-      )}
+      <span className={styles.name}>RYUNGFOLIO</span>
     </header>
   );
 }

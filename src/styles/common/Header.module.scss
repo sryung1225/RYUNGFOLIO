@@ -9,11 +9,13 @@
   z-index: 20;
   &_black {
     @extend .header;
+    color: $color-white;
   }
   &_white {
     @extend .header;
     background-color: $color-white;
     border-bottom: 1px solid $color-gray;
+    color: $color-black;
   }
 }
 
@@ -22,10 +24,10 @@
   @include rect(40px);
 }
 
-.email {
+.name {
+  font-size: $font-m;
   font-family: var(--font-aggro);
-  font-weight: 300;
-  color: $color-black;
+  font-weight: 700;
 }
 
 .navButton {
