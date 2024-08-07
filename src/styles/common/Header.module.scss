@@ -1,19 +1,19 @@
 .header {
   @include fixed(0, 0, null, 0);
   @include flex(space-between);
-  width: 100%;
+  width: calc(100% - 40px);
   height: 68px;
-  padding: 16px 24px;
-  border-bottom: 1px solid $color-gray;
+  margin: 0 20px;
+  padding: 16px 4px;
   box-sizing: border-box;
   z-index: 20;
-  &_white {
-    @extend .header;
-    color: $color-white;
-  }
   &_black {
     @extend .header;
-    color: $color-black;
+  }
+  &_white {
+    @extend .header;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-gray;
   }
 }
 
@@ -25,7 +25,7 @@
 .email {
   font-family: var(--font-aggro);
   font-weight: 300;
-  // color: $color-white;
+  color: $color-black;
 }
 
 .navButton {

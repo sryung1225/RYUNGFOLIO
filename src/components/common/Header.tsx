@@ -6,17 +6,13 @@ import styles from '@/styles/common/Header.module.scss';
 
 export default function Header() {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const aboutElement = document.getElementById('about');
       if (aboutElement) {
         const aboutPosition = aboutElement.getBoundingClientRect().top;
-        if (aboutPosition <= 100) {
-          setIsScrolledPast(true);
-        } else {
-          setIsScrolledPast(false);
-        }
+        if (aboutPosition <= 0) setIsScrolledPast(true);
+        else setIsScrolledPast(false);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -27,7 +23,7 @@ export default function Header() {
 
   return (
     <header
-      className={isScrolledPast ? styles.header_black : styles.header_white}
+      className={isScrolledPast ? styles.header_white : styles.header_black}
     >
       <Image
         className={styles.logo}
@@ -37,7 +33,9 @@ export default function Header() {
         height="40"
         priority
       />
-      <span className={styles.email}>sryung1225@gmail.com</span>
+      {isScrolledPast && (
+        <span className={styles.email}>sryung1225@gmail.com</span>
+      )}
     </header>
   );
 }

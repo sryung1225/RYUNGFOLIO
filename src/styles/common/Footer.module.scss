@@ -1,5 +1,6 @@
 .footer {
-  width: 100%;
+  width: calc(100% - 40px);
+  margin: 0 20px;
   padding: 10px 0;
   border-top: 1px solid $color-gray;
   background-color: $color-white;
