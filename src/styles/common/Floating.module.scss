@@ -1,0 +1,37 @@
+.floating {
+  @include fixed(null, 20px, 56px, null);
+  display: inline-block;
+  width: 50px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  border: 1px solid $color-gray;
+  border-radius: 50%;
+  & + & {
+    margin-top: 8px;
+  }
+
+  $types: 'github', 'tistory';
+  @each $type in $types {
+    &.#{$type} {
+      background-color: $color-white;
+      background-image: url('/img/#{$type}_black.svg');
+      border-color: $color-gray;
+      transition: 0.5s ease all;
+      &:hover {
+        background-color: $color-black;
+        background-image: url('/img/#{$type}_white.svg');
+        border-color: $color-black;
+      }
+    }
+  }
+}

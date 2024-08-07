@@ -4,6 +4,7 @@ import Education from '@/components/education/Education';
 import Work from '@/components/work/Work';
 import Projects from '@/components/projects/Projects';
 import Contact from '@/components/contact/Contact';
+import Floating from '@/components/common/Floating';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Work />
       <Projects />
       <Contact />
+      <Floating />
     </>
   );
 }
