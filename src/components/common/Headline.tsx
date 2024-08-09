@@ -10,7 +10,7 @@ function Headline({ headline, subheadline }: HeadlinePropsType) {
   return (
     <>
       <h3 className={styles.headline}>{headline}</h3>
-      {subheadline && <h4 className={styles.subheadline}>{subheadline}</h4>}
+      {subheadline && <p className={styles.subheadline}>{subheadline}</p>}
     </>
   );
 }

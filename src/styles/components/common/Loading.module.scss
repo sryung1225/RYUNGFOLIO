@@ -1,0 +1,6 @@
+.dimmed {
+  @include fixed(0, 0, 0, 0);
+  @include flex;
+  background-color: rgba($color-black, 0.2);
+  z-index: 100;
+}

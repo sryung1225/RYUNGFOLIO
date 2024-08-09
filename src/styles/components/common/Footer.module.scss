@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  padding: 10px 0;
+  background-color: $color-black;
+  & > p {
+    color: $color-white;
+    font-size: $font-xs;
+    font-weight: 100;
+    text-align: center;
+  }
+}

@@ -17,7 +17,7 @@ export default async function ExperienceCard() {
               width={80}
               height={80}
             />
-            <h5 className={styles.title}>{experience.company}</h5>
+            <h4 className={styles.title}>{experience.company}</h4>
             <p>{experience.period}</p>
             <p>{experience.position}</p>
           </div>

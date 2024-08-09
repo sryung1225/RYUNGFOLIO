@@ -1,6 +1,6 @@
 $padding-horiz: 40px;
 
-.section {
+.wrapper {
   width: calc(100% - $padding-horiz * 2);
   max-width: calc($size-default - $padding-horiz * 2);
   height: auto;
@@ -8,24 +8,13 @@ $padding-horiz: 40px;
   padding: 112px $padding-horiz 72px;
 }
 
-.hashtag {
-  display: inline-block;
-  padding: 0.6rem 0.6rem 0.4rem;
-  background-color: $color-red;
-  border-radius: 20px;
-  color: $color-white;
-  font-family: var(--font-aggro), sans-serif;
-  font-size: $font-xl;
-  font-weight: 700;
-  line-height: $font-xl;
-}
-
 .headline {
   display: block;
-  margin: 2.5rem 0 3.75rem;
+  margin: 2.5rem 0 0.5rem;
   font-size: $font-xl;
   font-weight: 500;
   line-height: 2.5rem;
+  text-align: center;
 }
 
 .subheadline {
@@ -35,7 +24,5 @@ $padding-horiz: 40px;
   font-size: $font-s;
   font-weight: 300;
   line-height: 1.6rem;
-  @at-root .headline + & {
-    margin-top: -3rem;
-  }
+  text-align: center;
 }

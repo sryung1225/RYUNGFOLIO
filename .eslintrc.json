@@ -36,6 +36,12 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "some": ["nesting", "id"]
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",

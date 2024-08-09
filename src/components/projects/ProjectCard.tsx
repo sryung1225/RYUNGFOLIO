@@ -37,7 +37,7 @@ export default async function ProjectCard() {
               />
             </div>
             <div className={styles.description}>
-              <h5 className={styles.title}>{work.title}</h5>
+              <h4 className={styles.title}>{work.title}</h4>
               <p className={styles.summary}>{work.summary}</p>
               <p className={styles.period}>
                 {formattedPeriod(work.startDate, work.endDate)}
