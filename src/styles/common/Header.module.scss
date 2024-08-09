@@ -21,16 +21,8 @@
 
 .back {
   position: relative;
-  display: inline-block;
-  padding: 10px 16px 10px 30px;
-  background-color: $color-white;
-  border: 1px solid $color-gray;
-  border-radius: 20px;
-  color: $color-black;
-  font-size: 1rem;
-  font-family: var(--font-aggro), sans-serif;
-  font-weight: 300;
-  transition: all 0.5s ease;
+  @include button;
+  padding-left: 30px;
   &::before {
     @include absolute(14px, null, null, 14px);
     @include rect(8px);
@@ -40,14 +32,9 @@
     transition: all 0.5s ease;
     content: '';
   }
-  &:hover,
-  &:focus {
-    background-color: $color-black;
-    border-color: $color-black;
-    color: $color-white;
-    &::before {
-      border-color: $color-white;
-    }
+  &:hover::before,
+  &:focus::before {
+    border-color: $color-white;
   }
 }
 

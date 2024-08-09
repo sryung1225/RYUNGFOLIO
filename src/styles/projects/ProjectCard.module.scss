@@ -1,5 +1,6 @@
 .card {
   $shadow-size: 10px;
+  position: relative;
   display: inline-block;
   background-color: $color-white;
   border: 1px solid $color-gray;
@@ -8,9 +9,12 @@
   overflow: hidden;
   transition: all 0.5s ease;
   &:hover {
-    transform: translate(-$shadow-size, -$shadow-size);
     border-color: $color-black;
     box-shadow: $shadow-size $shadow-size 0px 0px $color-black;
+    transform: translate(-$shadow-size, -$shadow-size);
+    .button {
+      opacity: 1;
+    }
   }
 }
 
@@ -51,4 +55,12 @@
       margin-left: 6px;
     }
   }
+}
+
+.button {
+  @include absolute(null, 20px, 20px, null);
+  @include button;
+  background-color: $color-black;
+  color: $color-white;
+  opacity: 0;
 }

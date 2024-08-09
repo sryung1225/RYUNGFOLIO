@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/components/common/Header';
+// import Gallery from '@/components/projects/Gallery';
 import styles from '@/styles/projects/ProjectDetail.module.scss';
 import { getProjectDetail } from '@/services/projects';
 import type { ProjectType } from '@/types/project';
@@ -56,6 +56,7 @@ export default async function ProjectDetailPage({
           <dt>역할</dt>
           <dd>{project.role}</dd>
         </dl>
+        {/* <Gallery title={project.title} screenshots={project.screenshots} /> */}
       </section>
     </>
   );

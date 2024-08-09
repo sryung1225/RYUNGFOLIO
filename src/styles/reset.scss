@@ -59,6 +59,11 @@ button {
   cursor: pointer;
 }
 
+input {
+  font-family: var(--font-pretendard);
+}
+
 textarea {
+  font-family: var(--font-pretendard);
   resize: none;
 }

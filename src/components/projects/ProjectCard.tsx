@@ -46,6 +46,7 @@ export default async function ProjectCard({
             </ul>
           )}
         </div>
+        <div className={styles.button}>자세히 보기</div>
       </Link>
     </li>
   );
