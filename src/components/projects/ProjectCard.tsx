@@ -11,12 +11,12 @@ export default async function ProjectCard({
   project: ProjectType;
 }) {
   return (
-    <li className={styles.card}>
-      <Link href={`/projects/${project.id}`}>
+    <li className={styles.card} key={project.title}>
+      <Link href={`/project?id=${project.id}`}>
         <div className={styles.thumbnail}>
           <Image
             src={project.thumbnail || '/img/dummy.jpg'}
-            alt="{project.title} 대표 이미지"
+            alt="RYUNGFOLIO"
             sizes="500px"
             fill
             style={{
