@@ -4,39 +4,6 @@
   // overflow-x: hidden;
 }
 
-.back {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 40px;
-  padding: 10px 16px 10px 30px;
-  background-color: $color-white;
-  border: 1px solid $color-gray;
-  border-radius: 20px;
-  color: $color-black;
-  font-size: 1rem;
-  font-family: var(--font-aggro), sans-serif;
-  font-weight: 300;
-  transition: all 0.5s ease;
-  &::before {
-    @include absolute(14px, null, null, 14px);
-    @include rect(8px);
-    border-left: 1px solid $color-black;
-    border-bottom: 1px solid $color-black;
-    transform: rotate(45deg);
-    transition: all 0.5s ease;
-    content: '';
-  }
-  &:hover,
-  &:focus {
-    background-color: $color-black;
-    border-color: $color-black;
-    color: $color-white;
-    &::before {
-      border-color: $color-white;
-    }
-  }
-}
-
 .summary {
   color: $color-dark-gray;
   font-size: $font-m;

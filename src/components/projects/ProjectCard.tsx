@@ -12,7 +12,7 @@ export default async function ProjectCard({
 }) {
   return (
     <li className={styles.card} key={project.title}>
-      <Link href={`/project?id=${project.id}`}>
+      <Link href={`/projects/${project.id}`}>
         <div className={styles.thumbnail}>
           <Image
             src={project.thumbnail || '/img/dummy.jpg'}
