@@ -1,3 +1,13 @@
+interface FeatureType {
+  title: string;
+  descriptions: string[];
+}
+
+interface PostType {
+  title: string;
+  number: number;
+}
+
 export interface ProjectType {
   id: number;
   title: string;
@@ -8,4 +18,8 @@ export interface ProjectType {
   role: 'Front-End';
   thumbnail: string;
   summary: string;
+  skillReason: string[];
+  features: FeatureType[];
+  posts: PostType[];
+  screenshots: string[];
 }
