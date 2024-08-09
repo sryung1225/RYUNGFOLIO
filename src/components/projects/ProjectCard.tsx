@@ -44,7 +44,7 @@ export default async function ProjectCard() {
               </p>
               {work.skills && (
                 <ul className={styles.skills}>
-                  {work.skills.split(', ').map((skill) => (
+                  {work.skills.map((skill) => (
                     <li key={skill}>
                       <span className="a11yHidden">{skill}</span>
                       <Image
