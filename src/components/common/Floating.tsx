@@ -1,12 +1,24 @@
 'use client';
 
 import Link from 'next/link';
-import useScrolledPast from '@/hooks/useScrolledPast';
+import { useEffect, useState } from 'react';
 import styles from '@/styles/common/Floating.module.scss';
 import LINKS from '@/constants/links';
 
 export default function Floating() {
-  const isScrolledPast = useScrolledPast('about', window.innerHeight - 200);
+  const [isScrolledPast, setIsScrolledPast] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 200) setIsScrolledPast(true);
+      else setIsScrolledPast(false);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     isScrolledPast && (
       <div className={styles.floating}>
