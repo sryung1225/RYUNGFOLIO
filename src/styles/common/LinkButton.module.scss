@@ -1,0 +1,31 @@
+.link_button {
+  position: relative;
+  @include button;
+  &::before {
+    @include rect(8px);
+    border-left: 1px solid $color-black;
+    border-bottom: 1px solid $color-black;
+    transition: all 0.5s ease;
+    content: '';
+  }
+  &:hover::before,
+  &:focus::before {
+    border-color: $color-white;
+  }
+  &_prev {
+    @extend .link_button;
+    padding-left: 30px;
+    &::before {
+      @include absolute(14px, null, null, 14px);
+      transform: rotate(45deg);
+    }
+  }
+  &_next {
+    @extend .link_button;
+    padding-right: 30px;
+    &::before {
+      @include absolute(14px, 14px, null, null);
+      transform: rotate(225deg);
+    }
+  }
+}

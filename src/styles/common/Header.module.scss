@@ -1,3 +1,5 @@
+@import './LinkButton.module.scss';
+
 .header {
   @include fixed(0, 0, null, 0);
   @include flex(space-between);
@@ -16,25 +18,6 @@
     background-color: $color-white;
     border-bottom: 1px solid $color-gray;
     color: $color-black;
-  }
-}
-
-.back {
-  position: relative;
-  @include button;
-  padding-left: 30px;
-  &::before {
-    @include absolute(14px, null, null, 14px);
-    @include rect(8px);
-    border-left: 1px solid $color-black;
-    border-bottom: 1px solid $color-black;
-    transform: rotate(45deg);
-    transition: all 0.5s ease;
-    content: '';
-  }
-  &:hover::before,
-  &:focus::before {
-    border-color: $color-white;
   }
 }
 

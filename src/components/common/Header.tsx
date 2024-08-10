@@ -35,7 +35,7 @@ export default function Header({ projectDetails = false }: HeaderType) {
       className={isScrolledPast ? styles.header_white : styles.header_black}
     >
       {projectDetails ? (
-        <Link className={styles.back} href="/#projects">
+        <Link className={styles.link_button_prev} href="/projects">
           전체 프로젝트 보기
         </Link>
       ) : (
