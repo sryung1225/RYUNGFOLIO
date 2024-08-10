@@ -18,6 +18,7 @@ export default async function ProjectDetailPage({
 }) {
   const project: ProjectType = await getProjectDetail(params);
   project.features.sort((a, b) => a.id - b.id);
+  project.posts.sort((a, b) => a.number - b.number);
   return (
     <>
       <Header projectDetails />
@@ -90,7 +91,7 @@ export default async function ProjectDetailPage({
             </ul>
           </div>
         )}
-        {project.features && (
+        {project.features.length > 0 && (
           <div className={styles.desc_features}>
             <h3>주요 기능 및 개인 기여</h3>
             <dl>
@@ -105,7 +106,7 @@ export default async function ProjectDetailPage({
             </dl>
           </div>
         )}
-        {project.posts && (
+        {project.posts.length > 0 && (
           <div className={styles.desc_posts}>
             <h3>연관 포스트</h3>
             <ul>
