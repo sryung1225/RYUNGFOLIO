@@ -6,6 +6,7 @@ import Gallery from '@/components/projects/Gallery';
 import styles from '@/styles/projects/ProjectDetail.module.scss';
 import { getProjectDetail } from '@/services/projects';
 import type { ProjectType } from '@/types/project';
+import formattedUrl from '@/utills/formattedUrl';
 import formattedPeriod from '@/utills/formattedPeriod';
 import formattedSkillName from '@/utills/formattedSkillName';
 import { v4 as uuidv4 } from 'uuid';
@@ -26,7 +27,10 @@ export default async function ProjectDetailPage({
         <p className={styles.summary}>{project.summary}</p>
         <Image
           className={styles.thumbnail}
-          src={project.thumbnail || '/img/dummy.jpg'}
+          src={
+            `${formattedUrl({ type: 'projects', title: project.title.toLowerCase() })}thumbnail.png` ||
+            '/img/dummy.jpg'
+          }
           alt={`${project.title} 대표 이미지`}
           width="1120"
           height="800"

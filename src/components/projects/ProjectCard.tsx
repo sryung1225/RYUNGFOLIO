@@ -20,7 +20,7 @@ export default async function ProjectCard({
               `${formattedUrl({ type: 'projects', title: project.title.toLowerCase() })}thumbnail.png` ||
               '/img/dummy.jpg'
             }
-            alt="RYUNGFOLIO"
+            alt={`${project.title} 대표 이미지`}
             sizes="500px"
             fill
             style={{
