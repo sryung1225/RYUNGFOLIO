@@ -27,7 +27,8 @@
       background-image: url('/img/#{$type}_black.svg');
       border-color: $color-gray;
       transition: 0.5s ease all;
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $color-black;
         background-image: url('/img/#{$type}_white.svg');
         border-color: $color-black;

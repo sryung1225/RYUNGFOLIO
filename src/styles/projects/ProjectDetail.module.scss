@@ -1,7 +1,9 @@
 @import './Title.module.scss';
 
 .wrapper {
-  // overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
 }
 
 .summary {
@@ -13,12 +15,45 @@
 
 .thumbnail {
   width: 100%;
+  max-width: 600px;
   height: auto;
-  margin: 2rem 0;
+  margin: 2rem auto 1rem;
   border: 1px solid $color-gray;
   border-radius: 20px;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.link {
+  &_wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+  }
+
+  $types: 'github', 'website';
+  @each $type in $types {
+    &_#{$type} {
+      position: relative;
+      @include button;
+      text-align: center;
+      &:hover,
+      &:focus {
+        color: $color-black;
+        &::after {
+          @include center;
+          @include rect(30px);
+          background: url('/img/#{$type}.svg') center;
+          background-size: contain;
+          content: '';
+        }
+      }
+    }
+  }
 }
 
 .info {
@@ -49,6 +84,59 @@
     }
     img {
       margin-left: -1px;
+    }
+  }
+}
+
+.desc {
+  margin-top: 20px;
+  line-height: 30px;
+  & > h3 {
+    padding-top: 20px;
+    border-top: 1px dashed $color-gray;
+    font-size: $font-s;
+    font-weight: 300;
+    line-height: 40px;
+  }
+  &_skills,
+  &_features {
+    @extend .desc;
+    li {
+      @include list-circle;
+    }
+  }
+  &_features {
+    dt {
+      position: relative;
+      display: inline-block;
+      font-family: var(--font-pretendard);
+      font-weight: 500;
+      &::after {
+        @include absolute(16px, 0, null, 0);
+        display: inline-block;
+        width: 100%;
+        height: 10px;
+        background-color: $color-light-red;
+        z-index: -1;
+        content: '';
+      }
+    }
+    dd {
+      @include list-circle;
+      & + dt {
+        margin-top: 8px;
+      }
+    }
+  }
+  &_posts {
+    @extend .desc;
+    li {
+      display: flex;
+    }
+    a {
+      @include hover-underline;
+      @include ellipsis;
+      white-space: nowrap;
     }
   }
 }

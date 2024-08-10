@@ -1,4 +1,5 @@
 interface FeatureType {
+  id: number;
   title: string;
   descriptions: string[];
 }
@@ -17,6 +18,8 @@ export interface ProjectType {
   member: string;
   role: 'Front-End';
   summary: string;
+  github: string;
+  website: string;
   skillReason: string[];
   features: FeatureType[];
   posts: PostType[];

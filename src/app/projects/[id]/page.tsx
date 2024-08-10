@@ -17,6 +17,7 @@ export default async function ProjectDetailPage({
   params: { id: string };
 }) {
   const project: ProjectType = await getProjectDetail(params);
+  project.features.sort((a, b) => a.id - b.id);
   return (
     <>
       <Header projectDetails />
@@ -36,10 +37,30 @@ export default async function ProjectDetailPage({
           height="800"
           priority
         />
+        <div className={styles.link_wrapper}>
+          <Link
+            href={project.github}
+            className={styles.link_github}
+            target="_blank"
+          >
+            Github 바로 가기
+          </Link>
+          <Link
+            href={project.website}
+            className={styles.link_website}
+            target="_blank"
+          >
+            배포 사이트 바로 가기
+          </Link>
+        </div>
         <h3 className="a11yHidden">프로젝트 정보</h3>
         <dl className={styles.info}>
           <dt>기한</dt>
           <dd>{formattedPeriod(project.startDate, project.endDate)}</dd>
+          <dt>규모 / 인원</dt>
+          <dd>{project.member}</dd>
+          <dt>역할</dt>
+          <dd>{project.role}</dd>
           <dt>사용 기술</dt>
           <dd>
             {project.skills && (
@@ -58,39 +79,35 @@ export default async function ProjectDetailPage({
               </ul>
             )}
           </dd>
-          <dt>규모 / 인원</dt>
-          <dd>{project.member}</dd>
-          <dt>역할</dt>
-          <dd>{project.role}</dd>
         </dl>
         {project.skillReason && (
-          <>
+          <div className={styles.desc_skills}>
             <h3>기술 선정 이유</h3>
             <ul>
               {project.skillReason.map((reason) => (
                 <li key={reason}>{reason}</li>
               ))}
             </ul>
-          </>
+          </div>
         )}
         {project.features && (
-          <>
+          <div className={styles.desc_features}>
             <h3>주요 기능 및 개인 기여</h3>
             <dl>
               {project.features.map((feature) => (
                 <React.Fragment key={feature.title}>
-                  <dt>{feature.title}</dt>
+                  <dt>📍 {feature.title}</dt>
                   {feature.descriptions.map((desc) => (
                     <dd key={uuidv4()}>{desc}</dd>
                   ))}
                 </React.Fragment>
               ))}
             </dl>
-          </>
+          </div>
         )}
         {project.posts && (
-          <>
-            <h3>관련 포스팅</h3>
+          <div className={styles.desc_posts}>
+            <h3>연관 포스트</h3>
             <ul>
               {project.posts.map((post) => (
                 <li key={post.number}>
@@ -98,12 +115,12 @@ export default async function ProjectDetailPage({
                     href={`https://s-ryung.tistory.com/${post.number}`}
                     target="_blank"
                   >
-                    {post.title}
+                    🔗 {post.title}
                   </Link>
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         )}
         {project.screenshots && (
           <>
