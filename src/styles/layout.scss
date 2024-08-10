@@ -4,6 +4,6 @@ section {
   width: calc(100% - $padding-horiz * 2);
   max-width: calc($size-default - $padding-horiz * 2);
   height: auto;
-  margin: 0 auto;
-  padding: 144px $padding-horiz 72px;
+  margin: 72px auto 0;
+  padding: 72px $padding-horiz;
 }

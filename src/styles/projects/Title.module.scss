@@ -16,11 +16,13 @@
   color: $color-white;
   font-size: 4rem;
   -webkit-text-stroke: 1px $color-black;
+  white-space: nowrap;
   &::before {
     @include absolute(0, null, null, 0);
     width: 0;
     overflow: hidden;
     color: $color-black;
+    white-space: nowrap;
     animation: fillStretch 4s 1s forwards;
     transition: all 0.5s ease;
     content: attr(data-text);
@@ -33,6 +35,7 @@
   @media (max-width: $size-s) {
     & {
       color: $color-black;
+      white-space: normal;
       word-break: break-all;
       &::before {
         content: none;
