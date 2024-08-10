@@ -71,11 +71,13 @@
     content: '';
   }
   @if $parent {
-    @at-root .#{$parent}:hover &::after {
+    @at-root .#{$parent}:hover &::after,
+      .#{$parent}:focus &::after {
       width: 100%;
     }
   } @else {
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
       width: 100%;
     }
   }

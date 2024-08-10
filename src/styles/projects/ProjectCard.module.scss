@@ -8,7 +8,8 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.5s ease;
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: $color-black;
     box-shadow: $shadow-size $shadow-size 0px 0px $color-black;
     transform: translate(-$shadow-size, -$shadow-size);
