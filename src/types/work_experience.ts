@@ -1,6 +1,6 @@
 export interface WorkExperienceType {
   company: string;
-  logo: string;
+  company_eng: string;
   period: string;
   position: string;
   works_projects: ProjectType[];

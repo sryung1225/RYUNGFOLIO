@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from '@/styles/work/ExperienceCard.module.scss';
 import { WorkExperienceType } from '@/types/work_experience';
+import formattedUrl from '@/utills/formattedUrl';
 import getWorkExperiences from '@/services/workExperiences';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -12,7 +13,10 @@ export default async function ExperienceCard() {
         <li className={styles.card} key={experience.company}>
           <div className={styles.info}>
             <Image
-              src={experience.logo}
+              src={formattedUrl({
+                type: 'works',
+                title: experience.company_eng,
+              })}
               alt={`${experience.company} 로고`}
               width={80}
               height={80}

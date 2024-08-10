@@ -16,7 +16,6 @@ export interface ProjectType {
   skills: string[];
   member: string;
   role: 'Front-End';
-  thumbnail: string;
   summary: string;
   skillReason: string[];
   features: FeatureType[];

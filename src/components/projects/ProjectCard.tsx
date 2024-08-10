@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/projects/ProjectCard.module.scss';
 import { ProjectType } from '@/types/project';
+import formattedUrl from '@/utills/formattedUrl';
 import formattedPeriod from '@/utills/formattedPeriod';
 import formattedSkillName from '@/utills/formattedSkillName';
 
@@ -15,7 +16,10 @@ export default async function ProjectCard({
       <Link href={`/projects/${project.id}`}>
         <div className={styles.thumbnail}>
           <Image
-            src={project.thumbnail || '/img/dummy.jpg'}
+            src={
+              `${formattedUrl({ type: 'projects', title: project.title.toLowerCase() })}thumbnail.png` ||
+              '/img/dummy.jpg'
+            }
             alt="RYUNGFOLIO"
             sizes="500px"
             fill
