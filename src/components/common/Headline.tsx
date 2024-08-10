@@ -6,7 +6,7 @@ interface HeadlinePropsType {
   subheadline?: ReactNode;
 }
 
-function Headline({ headline, subheadline }: HeadlinePropsType) {
+function Headline({ headline, subheadline = null }: HeadlinePropsType) {
   return (
     <>
       <h3 className={styles.headline}>{headline}</h3>
@@ -14,9 +14,5 @@ function Headline({ headline, subheadline }: HeadlinePropsType) {
     </>
   );
 }
-
-Headline.defaultProps = {
-  subheadline: null,
-};
 
 export default Headline;

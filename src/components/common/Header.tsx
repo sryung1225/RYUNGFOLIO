@@ -9,7 +9,7 @@ type HeaderType = {
   projectDetails?: boolean;
 };
 
-export default function Header({ projectDetails }: HeaderType) {
+export default function Header({ projectDetails = false }: HeaderType) {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
   useEffect(() => {
     if (projectDetails) {
@@ -48,12 +48,7 @@ export default function Header({ projectDetails }: HeaderType) {
           priority
         />
       )}
-
       <h1 className={styles.name}>RYUNGFOLIO</h1>
     </header>
   );
 }
-
-Header.defaultProps = {
-  projectDetails: false,
-};
