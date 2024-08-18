@@ -1,0 +1,33 @@
+@import './LinkButton.module.scss';
+
+.header {
+  @include fixed(0, 0, null, 0);
+  @include flex(space-between);
+  width: calc(100% - 40px);
+  height: 68px;
+  margin: 0 20px;
+  padding: 16px 4px;
+  box-sizing: border-box;
+  z-index: 20;
+  &_black {
+    @extend .header;
+    color: $color-white;
+  }
+  &_white {
+    @extend .header;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-gray;
+    color: $color-black;
+  }
+}
+
+.logo {
+  flex-shrink: 0;
+  @include rect(40px);
+}
+
+.name {
+  font-size: $font-m;
+  font-family: var(--font-aggro);
+  font-weight: 700;
+}

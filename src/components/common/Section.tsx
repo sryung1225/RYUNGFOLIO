@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
-import styles from '@/styles/components/common/Section.module.scss';
+import styles from '@/styles/common/Section.module.scss';
 import Headline from './Headline';
 
 interface SectionPropsType {
@@ -19,7 +19,7 @@ function Section({
   children,
 }: SectionPropsType) {
   return (
-    <section id={id} className={styles.section}>
+    <section id={id}>
       <h2 className="a11yHidden">{name}</h2>
       <Link href={`#${id}`} className={styles.hashtag}>
         # {id.toUpperCase()}

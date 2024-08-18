@@ -1,0 +1,13 @@
+.footer {
+  width: calc(100% - 40px);
+  margin: 60px 20px 0;
+  padding: 10px 0;
+  border-top: 1px solid $color-gray;
+  background-color: $color-white;
+  & > p {
+    color: $color-black;
+    font-size: $font-xs;
+    font-weight: 100;
+    text-align: center;
+  }
+}

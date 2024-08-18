@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
 import PROFILE_DATA from '@/constants/profile';
-import styles from '@/styles/components/about/Profile.module.scss';
+import styles from '@/styles/about/Profile.module.scss';
 
 export default function Profile() {
   return (

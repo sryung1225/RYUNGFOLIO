@@ -1,32 +1,54 @@
 'use client';
 
-import styles from '@/styles/components/common/Header.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import styles from '@/styles/common/Header.module.scss';
+import Link from 'next/link';
 
-export default function Header() {
-  const [openNav, setOpenNav] = useState(false);
-  const toggleNav = () => {
-    if (openNav) {
-      setOpenNav(false);
-    } else {
-      setOpenNav(true);
+type HeaderType = {
+  projectDetails?: boolean;
+};
+
+export default function Header({ projectDetails = false }: HeaderType) {
+  const [isScrolledPast, setIsScrolledPast] = useState(false);
+  useEffect(() => {
+    if (projectDetails) {
+      setIsScrolledPast(true);
     }
-  };
+    const handleScroll = () => {
+      const element = document.getElementById('about');
+      if (element) {
+        const position = element.getBoundingClientRect().top;
+        if (position <= 0) setIsScrolledPast(true);
+        else setIsScrolledPast(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [projectDetails]);
+
   return (
-    <header className={styles.header}>
-      <Image
-        className={styles.logo}
-        src="/img/logo.svg"
-        alt="로고"
-        width="40"
-        height="40"
-        priority
-      />
-      <button type="button" className={styles.navButton} onClick={toggleNav}>
-        <Image src="/img/nav.svg" alt="네비게이션" width="30" height="26" />
-      </button>
-      {openNav && <nav className={styles.nav} />}
+    <header
+      className={isScrolledPast ? styles.header_white : styles.header_black}
+    >
+      {projectDetails ? (
+        <Link className={styles.link_button_prev} href="/#projects">
+          전체 프로젝트 보기
+        </Link>
+      ) : (
+        <Image
+          className={styles.logo}
+          src={isScrolledPast ? '/img/logo_black.svg' : '/img/logo_white.svg'}
+          alt="로고"
+          width="40"
+          height="40"
+          priority
+        />
+      )}
+      <h1 className={styles.name}>RYUNGFOLIO</h1>
     </header>
   );
 }

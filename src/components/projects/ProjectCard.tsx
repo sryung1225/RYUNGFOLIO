@@ -1,66 +1,57 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/components/projects/projectCard.module.scss';
+import styles from '@/styles/projects/ProjectCard.module.scss';
 import { ProjectType } from '@/types/project';
-import getProjects from '@/api/projects';
-import getTimestamp from '@/utills/getTimestamp';
+import formattedUrl from '@/utills/formattedUrl';
 import formattedPeriod from '@/utills/formattedPeriod';
+import formattedSkillName from '@/utills/formattedSkillName';
 
-const converterSkillName = (skill: string) => {
-  return skill.toLowerCase().replace(/[.-]/g, '');
-};
-
-export default async function ProjectCard() {
-  const PROJECT: ProjectType[] = await getProjects();
-  PROJECT.sort((a, b) => {
-    if (a.endDate === null && b.endDate === null) return 0;
-    if (a.endDate === null) return -1;
-    if (b.endDate === null) return 1;
-    return getTimestamp(b.endDate) - getTimestamp(a.endDate);
-  });
-
+export default async function ProjectCard({
+  project,
+}: {
+  project: ProjectType;
+}) {
   return (
-    <>
-      {PROJECT.map((work) => (
-        <li className={styles.card} key={work.title}>
-          <Link href={`/project?id=${work.id}`}>
-            <div className={styles.thumbnail}>
-              <Image
-                src={work.thumbnail || '/img/dummy.jpg'}
-                alt="RYUNGFOLIO"
-                sizes="500px"
-                fill
-                style={{
-                  objectFit: 'cover',
-                }}
-              />
-            </div>
-            <div className={styles.description}>
-              <h4 className={styles.title}>{work.title}</h4>
-              <p className={styles.summary}>{work.summary}</p>
-              <p className={styles.period}>
-                {formattedPeriod(work.startDate, work.endDate)}
-              </p>
-              {work.skills && (
-                <ul className={styles.skills}>
-                  {work.skills.map((skill) => (
-                    <li key={skill}>
-                      <span className="a11yHidden">{skill}</span>
-                      <Image
-                        src={`/img/skills/${converterSkillName(skill)}.svg`}
-                        alt={skill}
-                        width="24"
-                        height="24"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </Link>
-        </li>
-      ))}
-    </>
+    <li className={styles.card} key={project.title}>
+      <Link href={`/projects/${project.id}`}>
+        <div className={styles.thumbnail}>
+          <Image
+            src={
+              `${formattedUrl({ type: 'projects', title: project.title.toLowerCase() })}thumbnail.png` ||
+              '/img/dummy.jpg'
+            }
+            alt={`${project.title} 대표 이미지`}
+            sizes="500px"
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+          />
+        </div>
+        <div className={styles.description}>
+          <h4 className={styles.title}>{project.title}</h4>
+          <p className={styles.summary}>{project.summary}</p>
+          <p className={styles.period}>
+            {formattedPeriod(project.startDate, project.endDate)}
+          </p>
+          {project.skills && (
+            <ul className={styles.skills}>
+              {project.skills.map((skill) => (
+                <li key={skill}>
+                  <span className="a11yHidden">{skill}</span>
+                  <Image
+                    src={`/img/skills/${formattedSkillName(skill)}.svg`}
+                    alt={skill}
+                    width="24"
+                    height="24"
+                  />
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div className={styles.button}>자세히 보기</div>
+      </Link>
+    </li>
   );
 }

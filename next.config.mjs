@@ -5,12 +5,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: process.env.NEXT_PUBLIC_SUPABASE_HOSTNAME,
-        pathname: '/storage/v1/object/sign/images/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        pathname: '/**',
+        pathname: '/storage/v1/object/public/images/**',
       },
     ],
   },

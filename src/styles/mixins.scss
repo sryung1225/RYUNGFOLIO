@@ -71,12 +71,33 @@
     content: '';
   }
   @if $parent {
-    @at-root .#{$parent}:hover &::after {
+    @at-root .#{$parent}:hover &::after,
+      .#{$parent}:focus &::after {
       width: 100%;
     }
   } @else {
-    &:hover::after {
+    &:hover::after,
+    &:focus::after {
       width: 100%;
     }
+  }
+}
+
+@mixin button {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  border-radius: 20px;
+  color: $color-black;
+  font-size: $font-s;
+  font-family: var(--font-aggro), sans-serif;
+  font-weight: 300;
+  transition: all 0.5s ease;
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    border-color: $color-black;
+    color: $color-white;
   }
 }

@@ -22,6 +22,7 @@
   grid-template-columns: 80px 1fr;
   padding-left: 14px;
   line-height: 2rem;
+  align-items: baseline;
   a {
     @include hover-underline;
   }

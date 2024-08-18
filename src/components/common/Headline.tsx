@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
-import styles from '@/styles/components/common/Section.module.scss';
+import styles from '@/styles/common/Section.module.scss';
 
 interface HeadlinePropsType {
   headline: ReactNode;
   subheadline?: ReactNode;
 }
 
-function Headline({ headline, subheadline }: HeadlinePropsType) {
+function Headline({ headline, subheadline = null }: HeadlinePropsType) {
   return (
     <>
       <h3 className={styles.headline}>{headline}</h3>
@@ -14,9 +14,5 @@ function Headline({ headline, subheadline }: HeadlinePropsType) {
     </>
   );
 }
-
-Headline.defaultProps = {
-  subheadline: null,
-};
 
 export default Headline;

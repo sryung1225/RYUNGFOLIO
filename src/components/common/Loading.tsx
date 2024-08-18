@@ -1,5 +1,5 @@
 import { SyncLoader } from 'react-spinners';
-import styles from '@/styles/components/common/Loading.module.scss';
+import styles from '@/styles/common/Loading.module.scss';
 
 export default function Loading() {
   return (

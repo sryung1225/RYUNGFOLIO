@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import styles from '@/styles/components/intro/Intro.module.scss';
+import styles from '@/styles/intro/Intro.module.scss';
 import Title from './Title';
 
 export default function Intro() {

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import ContactType from '@/types/contact';
-import sendContactEmail from '@/api/contact';
-import styles from '@/styles/components/contact/EmailForm.module.scss';
+import sendContactEmail from '@/services/contact';
+import styles from '@/styles/contact/EmailForm.module.scss';
 import Loading from '@/components/common/Loading';
 import Alert from './Alert';
 

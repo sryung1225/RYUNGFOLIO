@@ -1,21 +1,3 @@
-@mixin common-style($width: 100%) {
-  width: $width;
-  padding: 10px 16px;
-  box-sizing: border-box;
-  background-color: $color-white;
-  border: 1px solid $color-gray;
-  border-radius: 20px;
-  color: $color-black;
-  font-size: 1rem;
-  transition: all 0.5s ease;
-  &:hover {
-    border-color: $color-black;
-  }
-  &:focus {
-    outline-color: $color-black;
-  }
-}
-
 .form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,7 +13,21 @@
   }
   input,
   textarea {
-    @include common-style;
+    width: 100%;
+    padding: 10px 16px;
+    box-sizing: border-box;
+    background-color: $color-white;
+    border: 1px solid $color-gray;
+    border-radius: 20px;
+    color: $color-black;
+    font-size: $font-s;
+    transition: all 0.5s ease;
+    &:hover {
+      border-color: $color-black;
+    }
+    &:focus {
+      outline-color: $color-black;
+    }
   }
 }
 
@@ -57,15 +53,10 @@
 .submit {
   position: relative;
   grid-column: 1 / -1;
-  display: inline-block;
-  @include common-style(140px);
-  margin: 0 auto;
-  font-size: $font-s;
-  font-family: var(--font-aggro), sans-serif;
-  font-weight: 300;
+  @include button;
   &:hover,
   &:focus {
-    background-color: $color-black;
+    color: $color-black;
     &::after {
       @include center;
       @include rect(30px);

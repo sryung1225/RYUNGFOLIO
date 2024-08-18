@@ -1,4 +1,4 @@
-import styles from '@/styles/components/contact/Contact.module.scss';
+import styles from '@/styles/contact/Contact.module.scss';
 import EmailForm from './EmailForm';
 
 export default function Contact() {

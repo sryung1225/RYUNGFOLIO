@@ -17,6 +17,12 @@ h4,
   font-family: var(--font-aggro), sans-serif;
 }
 
+dt {
+  font-family: var(--font-aggro), sans-serif;
+  font-weight: 300;
+  vertical-align: middle;
+}
+
 .a11yHidden {
   display: inline-block;
   overflow: hidden;

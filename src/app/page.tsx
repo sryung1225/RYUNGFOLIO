@@ -5,11 +5,11 @@ import Education from '@/components/education/Education';
 import Work from '@/components/work/Work';
 import Projects from '@/components/projects/Projects';
 import Contact from '@/components/contact/Contact';
-import Footer from '@/components/common/Footer';
+import Floating from '@/components/common/Floating';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main>
+    <>
       <Header />
       <Intro />
       <About />
@@ -17,7 +17,7 @@ export default function Home() {
       <Work />
       <Projects />
       <Contact />
-      <Footer />
-    </main>
+      <Floating />
+    </>
   );
 }
