@@ -23,7 +23,7 @@
     overflow: hidden;
     color: $color-black;
     white-space: nowrap;
-    animation: fillStretch 4s 1s forwards;
+    animation: fillStretch 4s forwards;
     transition: all 0.5s ease;
     content: attr(data-text);
   }
