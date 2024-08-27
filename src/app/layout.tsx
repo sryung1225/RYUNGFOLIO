@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { pretendard, aggro } from '@/components/common/fonts';
+import Floating from '@/components/common/Floating';
 import Footer from '@/components/common/Footer';
 import '@/styles/global.scss';
 
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${pretendard.variable} ${aggro.variable}`}>
         <main>
           {children}
+          <Floating />
           <Footer />
         </main>
       </body>

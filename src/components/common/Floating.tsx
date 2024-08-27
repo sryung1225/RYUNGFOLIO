@@ -1,12 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from '@/styles/common/Floating.module.scss';
 import LINKS from '@/constants/links';
 
 export default function Floating() {
+  const pathname = usePathname();
+  const showButton = pathname === '/';
+
   const [isScrolledPast, setIsScrolledPast] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 200) setIsScrolledPast(true);
@@ -29,18 +34,20 @@ export default function Floating() {
   return (
     isScrolledPast && (
       <>
-        <div className={styles.floating_left}>
-          {LINKS.map((link) => (
-            <Link
-              key={link.kor}
-              href={link.href}
-              target="_blank"
-              className={`${styles.link} ${styles[link.name]}`}
-            >
-              <span className="a11yHidden">{link.kor} 바로가기</span>
-            </Link>
-          ))}
-        </div>
+        {showButton && (
+          <div className={styles.floating_left}>
+            {LINKS.map((link) => (
+              <Link
+                key={link.kor}
+                href={link.href}
+                target="_blank"
+                className={`${styles.link} ${styles[link.name]}`}
+              >
+                <span className="a11yHidden">{link.kor} 바로가기</span>
+              </Link>
+            ))}
+          </div>
+        )}
         <div className={styles.floating_right}>
           <button
             className={styles.scrollTop}
