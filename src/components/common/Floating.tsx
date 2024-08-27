@@ -19,20 +19,38 @@ export default function Floating() {
     };
   }, []);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     isScrolledPast && (
-      <div className={styles.floating}>
-        {LINKS.map((link) => (
-          <Link
-            key={link.kor}
-            href={link.href}
-            target="_blank"
-            className={`${styles.link} ${styles[link.name]}`}
+      <>
+        <div className={styles.floating_left}>
+          {LINKS.map((link) => (
+            <Link
+              key={link.kor}
+              href={link.href}
+              target="_blank"
+              className={`${styles.link} ${styles[link.name]}`}
+            >
+              <span className="a11yHidden">{link.kor} 바로가기</span>
+            </Link>
+          ))}
+        </div>
+        <div className={styles.floating_right}>
+          <button
+            className={styles.scrollTop}
+            type="button"
+            onClick={handleScrollToTop}
           >
-            <span className="a11yHidden">{link.kor} 바로가기</span>
-          </Link>
-        ))}
-      </div>
+            <span className="a11yHidden">페이지 최상단으로 올라가기</span>
+          </button>
+        </div>
+      </>
     )
   );
 }

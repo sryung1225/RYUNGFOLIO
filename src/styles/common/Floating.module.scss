@@ -1,12 +1,20 @@
 .floating {
-  @include fixed(null, 20px, 56px, null);
   display: inline-block;
   width: 50px;
   box-sizing: border-box;
   z-index: 20;
+  &_left {
+    @extend .floating;
+    @include fixed(null, null, 56px, 20px);
+  }
+  &_right {
+    @extend .floating;
+    @include fixed(null, 20px, 56px, null);
+  }
 }
 
-.link {
+.link,
+.scrollTop {
   position: relative;
   display: inline-block;
   width: 48px;
@@ -19,7 +27,9 @@
   & + & {
     margin-top: 8px;
   }
+}
 
+.link {
   $types: 'github', 'tistory';
   @each $type in $types {
     &.#{$type} {
@@ -34,5 +44,19 @@
         border-color: $color-black;
       }
     }
+  }
+}
+
+.scrollTop {
+  background-color: $color-white;
+  background-image: url('/img/to_top_black.svg');
+  background-size: 30px;
+  border-color: $color-gray;
+  transition: 0.5s ease all;
+  &:hover,
+  &:focus {
+    background-color: $color-black;
+    background-image: url('/img/to_top_white.svg');
+    border-color: $color-black;
   }
 }
