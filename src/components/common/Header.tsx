@@ -4,15 +4,14 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from '@/styles/common/Header.module.scss';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-type HeaderType = {
-  projectDetails?: boolean;
-};
-
-export default function Header({ projectDetails = false }: HeaderType) {
+export default function Header() {
   const [isScrolledPast, setIsScrolledPast] = useState(false);
+  const pathname = usePathname();
+  const showGoBackLink = pathname.startsWith('/projects');
   useEffect(() => {
-    if (projectDetails) {
+    if (showGoBackLink) {
       setIsScrolledPast(true);
     }
     const handleScroll = () => {
@@ -28,13 +27,13 @@ export default function Header({ projectDetails = false }: HeaderType) {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [projectDetails]);
+  }, [showGoBackLink]);
 
   return (
     <header
       className={isScrolledPast ? styles.header_white : styles.header_black}
     >
-      {projectDetails ? (
+      {showGoBackLink ? (
         <Link className={styles.link_button_prev} href="/#projects">
           전체 프로젝트 보기
         </Link>
