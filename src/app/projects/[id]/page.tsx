@@ -21,7 +21,7 @@ export default async function ProjectDetailPage({
   project.posts.sort((a, b) => a.number - b.number);
   return (
     <>
-      <Header projectDetails />
+      <Header />
       <section className={styles.wrapper}>
         <h2 className={styles.title} data-text={project.title}>
           {project.title}

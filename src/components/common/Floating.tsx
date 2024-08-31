@@ -8,7 +8,7 @@ import LINKS from '@/constants/links';
 
 export default function Floating() {
   const pathname = usePathname();
-  const showButton = pathname === '/';
+  const showSnsLinks = pathname === '/';
 
   const [isScrolledPast, setIsScrolledPast] = useState(false);
 
@@ -34,7 +34,7 @@ export default function Floating() {
   return (
     isScrolledPast && (
       <>
-        {showButton && (
+        {showSnsLinks && (
           <div className={styles.floating_left}>
             {LINKS.map((link) => (
               <Link
