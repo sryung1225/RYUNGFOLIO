@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <meta property="og:image" content="/img/thumbnail.jpg" />
       <body className={`${pretendard.variable} ${aggro.variable}`}>
         <main>
           {children}
