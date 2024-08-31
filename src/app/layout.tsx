@@ -24,11 +24,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const GAID: string = process.env.NEXT_PUBLIC_GA_ID || '';
   return (
     <html lang="ko">
-      {process.env.NODE_ENV === 'production' && (
-        <GoogleAnalytics gaId="process.env.NEXT_PUBLIC_GA_ID" />
-      )}
+      <GoogleAnalytics gaId={GAID} />
       <body className={`${pretendard.variable} ${aggro.variable}`}>
         <main>
           {children}

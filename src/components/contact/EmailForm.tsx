@@ -64,6 +64,7 @@ export default function EmailForm() {
             value={contact.name}
             onChange={onChange}
             required
+            autoComplete="name"
           />
         </label>
         <label htmlFor="email">
@@ -76,6 +77,7 @@ export default function EmailForm() {
             value={contact.email}
             onChange={onChange}
             required
+            autoComplete="email"
           />
         </label>
         <label htmlFor="content" className={styles.content}>
@@ -88,6 +90,7 @@ export default function EmailForm() {
             value={contact.content}
             onChange={onChange}
             required
+            autoComplete="off"
           />
         </label>
         <button type="submit" className={styles.submit}>

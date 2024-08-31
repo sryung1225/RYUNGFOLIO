@@ -1,4 +1,5 @@
 export interface WorkExperienceType {
+  id: number;
   company: string;
   company_eng: string;
   period: string;
