@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { pretendard, aggro } from '@/components/common/fonts';
 import Floating from '@/components/common/Floating';
 import Footer from '@/components/common/Footer';
@@ -17,6 +18,9 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <meta property="og:image" content="/img/thumbnail.jpg" />
+      {process.env.NODE_ENV === 'production' && (
+        <GoogleAnalytics gaId="process.env.NEXT_PUBLIC_GA_ID" />
+      )}
       <body className={`${pretendard.variable} ${aggro.variable}`}>
         <main>
           {children}
