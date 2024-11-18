@@ -8,7 +8,7 @@
   @include flex(center, null);
   flex-direction: column;
   width: calc(100% - $image-size - 30px);
-  height: $image-size;
+  min-height: $image-size;
   padding-left: $image-size + 30px;
   img {
     @include absolute(0, null, null, 0);

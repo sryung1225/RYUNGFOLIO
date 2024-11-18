@@ -44,7 +44,6 @@
 
 .description {
   flex-grow: 1;
-  margin-right: 20px;
   font-size: $font-s;
   line-height: $font-l;
   p:nth-child(2) {
@@ -61,6 +60,8 @@
     content: none;
   }
   .year {
+    width: 64px;
+    font-size: $font-m;
     text-align: left;
     border-right: 4px solid #c5554d;
   }

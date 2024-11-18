@@ -11,6 +11,12 @@
     @extend .floating;
     @include fixed(null, 20px, 56px, null);
   }
+  @media (max-width: $size-s) {
+    &_left,
+    &_right {
+      bottom: 20px;
+    }
+  }
 }
 
 .link,

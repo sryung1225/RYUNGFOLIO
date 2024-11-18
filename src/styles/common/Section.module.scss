@@ -8,6 +8,12 @@
   font-size: $font-xl;
   font-weight: 700;
   line-height: $font-xl;
+  @media (max-width: $size-m) {
+    & {
+      font-size: $font-l;
+      line-height: $font-l;
+    }
+  }
 }
 
 .headline {
@@ -20,7 +26,7 @@
   @media (max-width: $size-m) {
     & {
       font-size: $font-l;
-      line-height: $font-xl;
+      line-height: 2rem;
     }
   }
 }

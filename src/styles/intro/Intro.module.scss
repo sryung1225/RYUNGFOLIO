@@ -66,6 +66,17 @@
     background: url('/img/tree_right.svg') center bottom no-repeat;
     background-size: contain;
   }
+  @media (max-width: $size-m) {
+    & {
+      height: 4px;
+    }
+    &::before,
+    &::after {
+      bottom: 0;
+      width: 52px;
+      height: 36px;
+    }
+  }
 }
 
 @keyframes scrollDown {
