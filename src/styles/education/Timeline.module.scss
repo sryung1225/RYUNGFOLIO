@@ -28,7 +28,7 @@
   color: $color-red;
   font-family: var(--font-aggro), sans-serif;
   font-size: $font-l;
-  font-weight: 00;
+  font-weight: 400;
   text-align: right;
   &::after {
     @include absolute(0);
@@ -52,5 +52,19 @@
   }
   p:nth-child(n + 3) {
     @include list-circle;
+  }
+}
+
+@media (max-width: $size-m) {
+  .list::after,
+  .year::after {
+    content: none;
+  }
+  .year {
+    text-align: left;
+    border-right: 4px solid #c5554d;
+  }
+  .item {
+    gap: 20px;
   }
 }
