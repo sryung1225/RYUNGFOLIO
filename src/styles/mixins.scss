@@ -1,3 +1,14 @@
+@mixin a11yHidden {
+  display: inline-block;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute !important;
+}
+
 @mixin ellipsis($line: 1) {
   display: block;
   overflow: hidden;
@@ -85,7 +96,7 @@
 
 @mixin button {
   display: inline-block;
-  padding: 10px 16px;
+  padding: 9px 16px;
   background-color: $color-white;
   border: 1px solid $color-gray;
   border-radius: 20px;

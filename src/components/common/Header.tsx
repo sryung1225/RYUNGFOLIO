@@ -34,9 +34,11 @@ export default function Header() {
       className={isScrolledPast ? styles.header_white : styles.header_black}
     >
       {showGoBackLink ? (
-        <Link className={styles.link_button_prev} href="/#projects">
-          전체 프로젝트 보기
-        </Link>
+        <Link
+          className={styles.link_button_prev}
+          href="/#projects"
+          data-text="전체 프로젝트 보기"
+        />
       ) : (
         <Image
           className={styles.logo}

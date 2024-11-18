@@ -3,6 +3,7 @@
 .header {
   @include fixed(0, 0, null, 0);
   @include flex(space-between);
+  align-items: stretch;
   width: calc(100% - 40px);
   height: 68px;
   margin: 0 20px;
@@ -28,6 +29,7 @@
 
 .name {
   font-size: $font-m;
+  line-height: 36px;
   font-family: var(--font-aggro);
   font-weight: 700;
 }

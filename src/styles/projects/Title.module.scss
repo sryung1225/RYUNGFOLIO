@@ -30,16 +30,17 @@
   @media (max-width: $size-m) {
     & {
       font-size: 3rem;
-    }
-  }
-  @media (max-width: $size-s) {
-    & {
       color: $color-black;
       white-space: normal;
       word-break: break-all;
       &::before {
         content: none;
       }
+    }
+  }
+  @media (max-width: $size-s) {
+    & {
+      font-size: 2.5rem;
     }
   }
 }

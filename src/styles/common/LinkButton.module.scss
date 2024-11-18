@@ -16,8 +16,19 @@
     @extend .link_button;
     padding-left: 30px;
     &::before {
-      @include absolute(14px, null, null, 14px);
+      @include absolute(13px, null, null, 13px);
       transform: rotate(45deg);
+    }
+    &::after {
+      content: attr(data-text);
+    }
+    @media (max-width: $size-m) {
+      & {
+        padding-left: 16px;
+      }
+      &::after {
+        content: '';
+      }
     }
   }
   &_next {
