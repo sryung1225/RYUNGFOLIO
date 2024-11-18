@@ -46,13 +46,15 @@ export default async function ProjectDetailPage({
           >
             Github 바로 가기
           </Link>
-          <Link
-            href={project.website}
-            className={styles.link_website}
-            target="_blank"
-          >
-            배포 사이트 바로 가기
-          </Link>
+          {project.website && (
+            <Link
+              href={project.website}
+              className={styles.link_website}
+              target="_blank"
+            >
+              배포 사이트 바로 가기
+            </Link>
+          )}
         </div>
         <h3 className="a11yHidden">프로젝트 정보</h3>
         <dl className={styles.info}>

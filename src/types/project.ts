@@ -19,7 +19,7 @@ export interface ProjectType {
   role: 'Front-End';
   summary: string;
   github: string;
-  website: string;
+  website?: string;
   skillReason: string[];
   features: FeatureType[];
   posts: PostType[];

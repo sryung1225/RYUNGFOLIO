@@ -26,9 +26,7 @@
 
 .link {
   &_wrapper {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 20px;
     width: 100%;
     max-width: 600px;
@@ -39,6 +37,7 @@
   @each $type in $types {
     &_#{$type} {
       position: relative;
+      width: 100%;
       @include button;
       text-align: center;
       &:hover,
