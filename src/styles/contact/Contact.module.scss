@@ -15,6 +15,13 @@ $padding-horiz: 40px;
   font-weight: 500;
   line-height: 2.5rem;
   text-align: center;
+  word-break: keep-all;
+  @media (max-width: $size-m) {
+    & {
+      font-size: $font-l;
+      line-height: $font-xl;
+    }
+  }
 }
 
 .subheadline {
