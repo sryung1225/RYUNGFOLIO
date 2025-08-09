@@ -5,6 +5,7 @@ export interface WorkExperienceType {
   period: string;
   position: string;
   works_projects: ProjectType[];
+  array_index: number;
 }
 
 interface ProjectType {

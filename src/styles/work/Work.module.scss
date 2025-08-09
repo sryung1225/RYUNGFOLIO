@@ -1,20 +1,14 @@
 .wrapper {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media (max-width: $size-m) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
   gap: 40px;
   width: 100%;
   margin-top: 44px;
-  & > li {
-    width: 44%;
-    min-width: 520px;
-    @media (max-width: $size-m) {
-      & {
-        width: 100%;
-        min-width: auto;
-      }
-    }
-  }
   & + h3 {
     margin-top: 184px;
   }

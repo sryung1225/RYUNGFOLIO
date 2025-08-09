@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default async function ExperienceCard() {
   const EXPEREINCES: WorkExperienceType[] = await getWorkExperiences();
-  EXPEREINCES.sort((a, b) => a.id - b.id);
+  EXPEREINCES.sort((a, b) => a.array_index - b.array_index);
   return (
     <>
       {EXPEREINCES.map((experience) => (
