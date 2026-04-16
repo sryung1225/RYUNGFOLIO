@@ -1,14 +1,14 @@
 export interface WorkExperienceType {
   id: number;
   company: string;
-  company_eng: string;
+  companyEng: string;
   period: string;
   position: string;
-  works_projects: ProjectType[];
-  array_index: number;
+  worksProjects: WorkProjectType[];
+  arrayIndex: number;
 }
 
-interface ProjectType {
+interface WorkProjectType {
   title: string;
   details?: string[];
 }

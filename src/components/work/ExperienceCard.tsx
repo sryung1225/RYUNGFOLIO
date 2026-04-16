@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default async function ExperienceCard() {
   const EXPEREINCES: WorkExperienceType[] = await getWorkExperiences();
-  EXPEREINCES.sort((a, b) => a.array_index - b.array_index);
+  EXPEREINCES.sort((a, b) => a.arrayIndex - b.arrayIndex);
   return (
     <>
       {EXPEREINCES.map((experience) => (
@@ -16,7 +16,7 @@ export default async function ExperienceCard() {
             <Image
               src={formattedUrl({
                 type: 'works',
-                title: experience.company_eng,
+                title: experience.companyEng,
               })}
               alt={`${experience.company} 로고`}
               width={80}
@@ -27,7 +27,7 @@ export default async function ExperienceCard() {
             <p>{experience.position}</p>
           </div>
           <ul className={styles.do_list}>
-            {experience.works_projects.map((item) => (
+            {experience.worksProjects.map((item) => (
               <li className={styles.do_item} key={item.title}>
                 <h6 className={styles.title}>{item.title}</h6>
                 <ul className={styles.description}>

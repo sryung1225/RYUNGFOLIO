@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { notFound } from 'next/navigation';
 import Header from '@/components/common/Header';
 import Gallery from '@/components/projects/Gallery';
 import styles from '@/styles/projects/ProjectDetail.module.scss';
 import { getProjectDetail } from '@/services/projects';
-import type { ProjectType } from '@/types/project';
 import formattedUrl from '@/utills/formattedUrl';
 import formattedPeriod from '@/utills/formattedPeriod';
 import formattedSkillName from '@/utills/formattedSkillName';
@@ -16,7 +16,10 @@ export default async function ProjectDetailPage({
 }: {
   params: { id: string };
 }) {
-  const project: ProjectType = await getProjectDetail(params);
+  const project = await getProjectDetail(params);
+  if (!project) {
+    notFound();
+  }
   project.features.sort((a, b) => a.id - b.id);
   project.posts.sort((a, b) => a.number - b.number);
   return (
