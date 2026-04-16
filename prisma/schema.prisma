@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  title       String
+  startDate   String    @map("start_date")
+  endDate     String?   @map("end_date")
+  skills      String[]
+  member      String
+  role        String
+  summary     String
+  github      String
+  website     String?
+  skillReason String[]  @map("skill_reason")
+  screenshots String[]
+
+  features Feature[]
+  posts    Post[]
+
+  @@map("projects")
+}
+
+model Feature {
+  id           Int      @id @default(autoincrement())
+  title        String
+  descriptions String[]
+  projectId    Int      @map("project_id")
+  project      Project  @relation(fields: [projectId], references: [id])
+
+  @@map("features")
+}
+
+model Post {
+  id        Int     @id @default(autoincrement())
+  title     String
+  number    Int
+  projectId Int     @map("project_id")
+  project   Project @relation(fields: [projectId], references: [id])
+
+  @@map("posts")
+}
+
+model Work {
+  id         Int           @id @default(autoincrement())
+  company    String
+  companyEng String        @map("company_eng")
+  period     String
+  position   String
+  arrayIndex Int           @map("array_index")
+
+  worksProjects WorkProject[]
+
+  @@map("works")
+}
+
+model WorkProject {
+  id      Int      @id @default(autoincrement())
+  title   String
+  details String[]
+  workId  Int      @map("work_id")
+  work    Work     @relation(fields: [workId], references: [id])
+
+  @@map("works_projects")
+}
