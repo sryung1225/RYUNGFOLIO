@@ -1,9 +1,10 @@
-import instance from './axiosInstance';
+import prisma from '@/lib/prisma';
 
 async function getWorkExperiences() {
   try {
-    const response = await instance.get(`/works?select=*,works_projects(*)`);
-    return response.data;
+    return await prisma.work.findMany({
+      include: { worksProjects: true },
+    });
   } catch (error) {
     console.error('업무 경험 데이터 패칭 실패', error);
     return [];
