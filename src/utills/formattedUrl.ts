@@ -4,15 +4,10 @@ interface ParameterType {
 }
 
 const formattedUrl = ({ type, title }: ParameterType): string => {
-  let fullUrl = '';
   if (type === 'works') {
-    fullUrl = `https://${process.env.NEXT_PUBLIC_SUPABASE_HOSTNAME}
-            /storage/v1/object/public/images/works/${title}.png`;
-  } else if (type === 'projects') {
-    fullUrl = `https://${process.env.NEXT_PUBLIC_SUPABASE_HOSTNAME}
-    /storage/v1/object/public/images/projects/${title}/`;
+    return `/img/works/${title}.png`;
   }
-  return fullUrl.replace(/\s/g, '');
+  return `/img/projects/${title}/`;
 };
 
 export default formattedUrl;
