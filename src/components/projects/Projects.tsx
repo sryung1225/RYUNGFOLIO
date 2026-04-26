@@ -1,12 +1,12 @@
 import Section from '@/components/common/Section';
 import styles from '@/styles/projects/Projects.module.scss';
-import { ProjectType } from '@/types/project';
+import { ProjectListItem } from '@/types/project';
 import getProjects from '@/services/projects';
 import getTimestamp from '@/utills/getTimestamp';
 import ProjectCard from './ProjectCard';
 
 export default async function Projects() {
-  const projects: ProjectType[] = await getProjects();
+  const projects: ProjectListItem[] = await getProjects();
   projects.sort((a, b) => {
     if (a.endDate === null && b.endDate === null) return 0;
     if (a.endDate === null) return -1;

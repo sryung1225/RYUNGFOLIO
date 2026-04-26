@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/projects/ProjectCard.module.scss';
-import { ProjectType } from '@/types/project';
+import { ProjectListItem } from '@/types/project';
 import formattedUrl from '@/utills/formattedUrl';
 import formattedPeriod from '@/utills/formattedPeriod';
 import formattedSkillName from '@/utills/formattedSkillName';
@@ -9,7 +9,7 @@ import formattedSkillName from '@/utills/formattedSkillName';
 export default async function ProjectCard({
   project,
 }: {
-  project: ProjectType;
+  project: ProjectListItem;
 }) {
   return (
     <li className={styles.card} key={project.title}>
